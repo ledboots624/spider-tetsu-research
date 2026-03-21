@@ -1,0 +1,218 @@
+{
+  "step": 3,
+  "role": "technical-strategy",
+  "model": "gpt-5.3-codex",
+  "extracted_at": "2026-03-21T21:28:54.956753",
+  "claims": [
+    {
+      "claim": "経歴・海外経験・ライブ・機材を一元管理する「証拠付きナレッジDB」が必要",
+      "evidence": "研究スコープJSON（focus指定）に基づき、情報の分散を防ぐためcontentとsourceを分離し、各記事にsource_id/reliability_tier/confidenceを必須化することが有効と判断",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "User-provided research_scope JSON（focus指定）",
+        "source_locator": "N/A",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "一次情報とコミュニティ情報の混在に対応する真偽ラベル運用が必要",
+      "evidence": "Otis Rush共演エピソード等、録音・記録が残らない情報が存在するため、公開面に「公式確認済み/コミュニティ証言/未検証」バッジを実装し、争点情報は注釈付き表示することで信頼性を担保できる",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "深層分析レポート（Otis Rush共演のエビデンス評価）",
+        "source_locator": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier2",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "10ページ共有資料を最初のMVP成果物にするべき",
+      "evidence": "深層分析レポート7章の10ページ構成提案に基づき、固定テンプレを作成しDBから自動差し込みで更新することで、ファン共有会での即時活用が可能",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "深層分析レポート 7章（10ページ構成提案）",
+        "source_locator": "https://spider-tetsu.jimdosite.com/ / https://lit.link/spidertetsu",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier2",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "ライブ中心の情報体験（予定＋履歴）を中核機能に置くべき",
+      "evidence": "Spider Tetsu公式lit.linkにスケジュール情報が継続的に掲載されており、週次更新のライブカレンダーと過去公演アーカイブの同時運用が実現可能",
+      "source": {
+        "source_type": "official_document",
+        "source_title": "Spider Tetsu lit.link（スケジュール情報）",
+        "source_locator": "https://lit.link/spidertetsu",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "機材・音作り特集はファン深耕に有効",
+      "evidence": "K&T MODERN VINTAGE GUITARSの公式製品ページにSPIDER-Hの詳細が掲載されており、使用ギター・アンプを含めた「検証済み機材ページ」の構築が可能",
+      "source": {
+        "source_type": "industry_report",
+        "source_title": "K&T MODERN VINTAGE GUITARS - SPIDER-H Product Page",
+        "source_locator": "https://www.kt-pickup.com/product/spider-h-set/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "ファン投稿は「投稿→検証→公開」の審査フローが必須",
+      "evidence": "ファンによる情報共有という目的上、誤情報・荒れのリスクがあるため、投稿フォーム・レビューキュー・差し戻し理由テンプレの実装が必要",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "User-provided research_scope JSON（purpose: ファンで情報共有）",
+        "source_locator": "N/A",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "海外経験を踏まえ、JP/EN二言語化は第2段階で有効",
+      "evidence": "公式プロフィールにシカゴでの活動歴が記載されており、英語圏への情報発信ニーズがあるが、翻訳品質リスクを考慮し固定ページのみ先行二言語化、ライブ速報はJP優先で段階拡張するアプローチが現実的",
+      "source": {
+        "source_type": "official_document",
+        "source_title": "Spider Tetsu Official Website - Profile（シカゴ活動）",
+        "source_locator": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "フェーズR1（1-2週）でデータモデル設計・初期投入・真偽ラベル運用を開始すべき",
+      "evidence": "技術戦略上のMVP計画として、主要トピック（経歴/海外/ライブ/機材）を最低1周公開可能な状態を完了条件とする",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "技術戦略上の実装見積（MVP計画）",
+        "source_locator": "N/A",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier4",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "フェーズR2（3-5週）でWeb MVP・10ページ資料・ライブ予定連携を公開すべき",
+      "evidence": "ファン共有会で実際に使える状態を完了条件とし、MVP公開と資料テンプレ公開を同時に行うことで初期ユーザーへの価値提供が可能",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "技術戦略上の実装見積（MVP計画）",
+        "source_locator": "N/A",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier4",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "フェーズR3（6-8週）でファン投稿導線・編集審査・改訂履歴管理を実装すべき",
+      "evidence": "投稿から公開までの運用が回る状態を完了条件とするが、運用拡張フェーズであり実現に不確実性を伴う",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "技術戦略上の実装見積（運用拡張）",
+        "source_locator": "N/A",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier4",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "low"
+    },
+    {
+      "claim": "フェーズR4（9-12週）でJP/EN対応・分析計測・SNS配信用素材自動化を実施すべき",
+      "evidence": "継続運用のKPI計測を完了条件とするが、拡張計画フェーズであり実現可能性の裏付けが弱い",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "技術戦略上の実装見積（拡張計画）",
+        "source_locator": "N/A",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier4",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "low"
+    },
+    {
+      "claim": "事実の過剰断定（録音が残らない共演エピソード等）は信頼失墜リスクがある",
+      "evidence": "深層分析レポートのエビデンス評価において、断定表現を避け出典と確度を常時表示することが信頼維持に不可欠と分析されている",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "深層分析レポート（エビデンス評価）",
+        "source_locator": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier2",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "写真・動画・音源の権利不備は公開停止・クレームリスクを招く",
+      "evidence": "権利管理の一般実務知見に基づき、権利台帳（権利者/許諾範囲/期限）の必須化が対策として有効",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "権利管理の一般実務知見",
+        "source_locator": "N/A",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier4",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "ライブ情報の更新滞留は利用離脱を引き起こす",
+      "evidence": "Spider Tetsu公式lit.linkが継続的なスケジュール更新を前提として運用されており、更新担当固定・週次SLA・未更新アラートによる運用体制が必要",
+      "source": {
+        "source_type": "official_document",
+        "source_title": "Spider Tetsu lit.link（継続的スケジュール更新の必要性）",
+        "source_locator": "https://lit.link/spidertetsu",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "投稿コミュニティの品質低下は炎上・離脱リスクを招く",
+      "evidence": "ファンコミュニティ運用上の一般知見に基づき、投稿ガイドライン・モデレーション基準・通報導線の整備が対策として有効",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "ファンコミュニティ運用上の一般知見",
+        "source_locator": "N/A",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier4",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    }
+  ]
+}

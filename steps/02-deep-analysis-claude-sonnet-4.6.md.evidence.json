@@ -1,0 +1,162 @@
+{
+  "step": 2,
+  "role": "deep-analysis",
+  "model": "claude-sonnet-4.6",
+  "extracted_at": "2026-03-21T21:24:43.523932",
+  "claims": [
+    {
+      "claim": "スパイダーテツは「竹田和夫への師事」と「シカゴ渡米・オーティス・ラッシュとの共演」という二段階の音楽的洗礼を受けた",
+      "evidence": "竹田和夫（CREATION）に師事し「竹田和夫＆エル・コヨーテス」に参加後、シカゴへ渡米してオーティス・ラッシュのバースデーライブで共演したとの記述が複数の独立したプロフィール文に存在する",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "スパイダーテツ各種プロフィール文（複数）",
+        "source_locator": "https://spider-tetsu.jimdosite.com/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier3",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "母親がジャズ・ブルースを弾く環境で育ち、「大江戸下町生まれ」の感性がブルースとの親和性を生んだ",
+      "evidence": "母親が音楽を嗜んでいたという経歴情報と、下町的感性とシカゴ・ブルースの「魂の叫び」との共鳴が複数ソースに記述されている",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "スパイダーテツ公式プロフィール・リンクまとめ",
+        "source_locator": "https://lit.link/spidertetsu",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier3",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "ジャンゴ・ラインハルト、ハウリン・ウルフ、ウィリー・ジョンソンが主要な影響源であり、「生活に根ざした音楽」という共通軸で繋がっている",
+      "evidence": "プロフィールおよびインタビュー等で言及されている影響源リストに基づく分析的解釈",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "スパイダーテツ公式サイト・プロフィール",
+        "source_locator": "https://spider-tetsu.jimdosite.com/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier3",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "K&T Pickupのシグネチャーピックアップ「Spider-H」は2012年エンドース契約後、約5年の開発期間を経て2017年に発売された",
+      "evidence": "K&T Pickup公式サイトにスパイダーテツのプレイヤーページが存在し、受注生産・手巻き・PAFベース設計・価格17万円前後という仕様が記載されている",
+      "source": {
+        "source_type": "official_document",
+        "source_title": "K&T Pickup プレイヤーページ（Spider Tetsu）",
+        "source_locator": "https://www.kt-pickup.com/player/spider-tetsu/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier2",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "「Spider-H」は受注生産・手巻きの高価格帯（17万円前後）モデルであり、PAFベースの1950年代末サウンドを志向している",
+      "evidence": "K&T Pickup公式サイトに仕様と価格帯が明記されており、一次情報として信頼性が高い",
+      "source": {
+        "source_type": "official_document",
+        "source_title": "K&T Pickup プレイヤーページ（Spider Tetsu）",
+        "source_locator": "https://www.kt-pickup.com/player/spider-tetsu/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier2",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "スパイダーテツはRed Hot Wagonsを結成し、ワーゲンバスで全国を巡るライブスタイルを採用している",
+      "evidence": "公式サイトおよびリンクまとめにRed Hot Wagonsの活動と移動スタイルが記載されている",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "スパイダーテツ公式サイト",
+        "source_locator": "https://spider-tetsu.jimdosite.com/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier3",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "Red Hot Wagonsは海外の海軍基地でもライブを行った経験を持つ",
+      "evidence": "先行収集データに記述があるが、詳細な裏付けソースは不明確",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "スパイダーテツ関連プロフィール・先行収集データ",
+        "source_locator": "https://lit.link/spidertetsu",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier4",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "low"
+    },
+    {
+      "claim": "スパイダーテツは寺山修司作品でストーリーテラーとして出演するなど、ミュージカル・朗読劇へと活動領域を拡大している",
+      "evidence": "公式サイト・リンクまとめに朗読劇・舞台への参加実績が記載されている",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "スパイダーテツ公式サイト・lit.link",
+        "source_locator": "https://lit.link/spidertetsu",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier3",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "2026年に竹中直人・カルメン・マキとの共演が予定されている",
+      "evidence": "公式サイトまたはイベント告知に記載されているが、未開催のため実施確認は不可",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "スパイダーテツ公式サイト・イベント情報",
+        "source_locator": "https://spider-tetsu.jimdosite.com/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier3",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "代表作「I'm Spider」は2019年に再発されており、録音作品よりもライブ・生演奏を核とする哲学を反映している可能性がある",
+      "evidence": "ディスコグラフィ情報として「I'm Spider」（2019年再発）が記録されているが、録音点数の少なさは意図的戦略か状況的制約かの判別は困難",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "スパイダーテツ公式サイト・ディスコグラフィ",
+        "source_locator": "https://spider-tetsu.jimdosite.com/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier3",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "low"
+    },
+    {
+      "claim": "スパイダーテツは日本ブルース第二世代（1980〜90年代）と第三世代（2000年代以降）の架け橋的存在であり、本場体験を持ちながら現代の文脈でブルースを再解釈し続けている",
+      "evidence": "竹田和夫（第一世代）への師事とシカゴ渡米経験、および現在の演劇・他ジャンルとの融合活動から導かれる分析的解釈であり、一次ソースによる直接的な裏付けはない",
+      "source": {
+        "source_type": "unknown",
+        "source_title": "本分析レポート（総合考察）",
+        "source_locator": "https://spider-tetsu.jimdosite.com/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier4",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "low"
+    }
+  ]
+}
