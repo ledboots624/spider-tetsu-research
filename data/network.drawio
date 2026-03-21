@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-03-21T20:55:00.000Z" agent="AI Research Agent" version="21.6.8" type="device">
+  <diagram id="Page-1" name="Page-1">
+    <mxGraphModel dx="1100" dy="850" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Center Node: Spider Tetsu -->
+        <mxCell id="node_main" value="スパイダーテツ&#xa;(Spider Tetsu)" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;fontSize=14;fontStyle=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="360" y="320" width="160" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- People/Organization Nodes (Rectangle/Green) -->
+        <mxCell id="node_takeda" value="竹田和夫" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=#507E32;fontColor=#ffffff;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="600" y="320" width="120" height="60" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="node_creation" value="CREATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=#507E32;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="600" y="220" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_el_coyotes" value="エル・コヨーテス" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=#507E32;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="600" y="420" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Places/Background Nodes (Circle/Orange) -->
+        <mxCell id="node_tokyo" value="東京下町" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ED7D31;strokeColor=#A0522D;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="390" y="140" width="100" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_mother" value="母親" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ED7D31;strokeColor=#A0522D;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="180" width="90" height="90" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="node_chicago" value="シカゴ (米国)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ED7D31;strokeColor=#A0522D;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="390" y="550" width="100" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_livehouse" value="ライブハウス" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ED7D31;strokeColor=#A0522D;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="240" y="520" width="90" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Roles/Attributes Nodes (Rectangle/Blue) -->
+        <mxCell id="node_singer" value="ブルース・シンガー" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="140" y="300" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_guitarist" value="ギタリスト" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="140" y="360" width="140" height="40" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="node_theater" value="演劇分野への進出" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="140" y="420" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_gear" value="機材へのこだわり" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="540" y="520" width="140" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="node_jazz" value="ジャズ・ブルース" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="60" y="180" width="120" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="edge_1" value="出身" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="node_main" target="node_tokyo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge_2" value="影響" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0.25;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="node_mother" target="node_main">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge_3" value="ルーツ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_jazz" target="node_mother">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge_4" value="師事" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_main" target="node_takeda">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge_5" value="リーダー" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_takeda" target="node_creation">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge_6" value="参加" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="node_main" target="node_el_coyotes">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge_7" value="武者修行" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_main" target="node_chicago">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge_8" value="活動拠点" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_main" target="node_livehouse">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge_9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_main" target="node_singer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge_10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_main" target="node_guitarist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="edge_11" value="活動拡大" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_main" target="node_theater">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edge_12" value="独自の哲学" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="node_main" target="node_gear">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

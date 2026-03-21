@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-03-21T11:56:45.864Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/16.5.1 Chrome/96.0.4664.110 Electron/16.0.7 Safari/537.36" version="16.5.1" type="device">
+  <diagram id="SpiderTetsu-ConfidenceMap" name="Page-1">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background / Axes -->
+        <mxCell id="bg" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="760" height="560" as="geometry" />
+        </mxCell>
+        
+        <!-- Y-Axis Label: Confidence -->
+        <mxCell id="axis-y-label" value="確信度 (Confidence)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;rotation=-90;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="300" width="40" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- X-Axis Label: Reliability Tier -->
+        <mxCell id="axis-x-label" value="信頼性ティア (Reliability Tier)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="300" y="610" width="200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Grid Headers (Tiers) -->
+        <mxCell id="tier1-h" value="Tier 1: 公式・一次情報" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="80" y="50" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tier2-h" value="Tier 2: 報道・メディア" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="320" y="50" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="tier3-h" value="Tier 3: 口コミ・SNS" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="560" y="50" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Grid Headers (Confidence) -->
+        <mxCell id="conf-high" value="High (確実)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="50" y="150" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="conf-med" value="Medium (概ね確実)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="50" y="350" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="conf-low" value="Low (要検証)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="50" y="500" width="80" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Matrix Areas (Visual Guides) -->
+        <mxCell id="area-high-t1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1F5FE;strokeColor=#B3E5FC;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="140" y="90" width="220" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="area-med-t2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E8F5E9;strokeColor=#C8E6C9;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="380" y="290" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="area-low-t3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF3E0;strokeColor=#FFE0B2;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="620" y="460" width="160" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- Data Nodes: Tier 1 / High (The Core Facts) -->
+        <mxCell id="fact1" value="経歴：東京下町生まれ&#xa;竹田和夫(CREATION)に師事" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="150" y="100" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="fact2" value="海外経験：シカゴ武者修行&#xa;オーティス・ラッシュ共演" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="150" y="160" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fact3" value="機材：Teisco、K&amp;T PU&#xa;独自ヴィンテージサウンド" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="150" y="220" width="200" height="50" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="fact4" value="作品：アルバム『I'm Spider』&#xa;全曲オリジナル・インスト" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#ffffff;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="150" y="280" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Data Nodes: Tier 2 / Medium (Activities) -->
+        <mxCell id="fact5" value="活動：全国ツアー&#xa;Spider Walk Blues Band" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=#548235;fontColor=#ffffff;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="300" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="fact6" value="演劇：『夢に向かって』等&#xa;ミュージカル・朗読劇出演" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=#548235;fontColor=#ffffff;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="360" width="200" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Data Nodes: Tier 3 / Medium-Low (Reputation) -->
+        <mxCell id="fact7" value="評価：「本物のブルース」&#xa;「アットホームな人柄」" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ED7D31;strokeColor=#C65911;fontColor=#ffffff;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="630" y="380" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows / Relationships -->
+        <mxCell id="edge1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;" edge="1" parent="1" source="fact1" target="fact2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#999999;dashed=1;" edge="1" parent="1" source="fact2" target="fact3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="Electron" modified="2026-03-21T12:00:00.000Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/14.6.13 Chrome/89.0.4389.128 Electron/12.0.7 Safari/537.36" version="14.6.13" type="device">
+  <diagram id="SpiderTetsu-Reliability-Chart" name="Page-1">
+    <mxGraphModel dx="1000" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- Header -->
+        <mxCell id="header" value="スパイダーテツ：情報の信頼性ティア別分布 (Source Reliability Chart)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="800" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Legend / Axis Labels -->
+        <mxCell id="label_t1" value="Tier 1: 公式・一次情報 (High)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;fontColor=#ffffff;strokeColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="label_t2" value="Tier 2: 実績・メディア (Medium)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;fontColor=#ffffff;strokeColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="340" y="80" width="260" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="label_t3" value="Tier 3: 評判・口コミ (Context)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ED7D31;fontColor=#ffffff;strokeColor=none;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="640" y="80" width="260" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 1 Nodes (Blue #DAE8FC border #4472C4) -->
+        <mxCell id="t1_1" value="プロフィール&#xa;東京下町出身、竹田和夫氏に師事&#xa;CREATION/エル・コヨーテス参加" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#4472C4;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="140" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_2" value="シカゴ武者修行&#xa;現地ミュージシャンとの共演&#xa;オーティス・ラッシュBDライブ出演" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#4472C4;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="230" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_3" value="音楽スタイル&#xa;シカゴ・ブルース基調&#xa;ジャンゴ・ラインハルト等の影響" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#4472C4;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="320" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_4" value="使用機材&#xa;Teisco等ビザールギター&#xa;K&amp;T Pickupsシグネチャー" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#4472C4;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="410" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t1_5" value="ディスコグラフィ&#xa;アルバム『I'm Spider』&#xa;全曲オリジナル・インスト" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#4472C4;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="500" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 2 Nodes (Green #D5E8D4 border #82B366) -->
+        <mxCell id="t2_1" value="全国ツアー活動&#xa;Spider Walk Blues Band&#xa;Spider Tetsu &amp; Red Hot Wagons" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="340" y="140" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_2" value="演劇・舞台&#xa;『夢に向かって・ブルースな日々』&#xa;『ここは静かな最前線』出演" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="340" y="230" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t2_3" value="配信活動&#xa;ストリーミングサービスでの楽曲配信" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="340" y="320" width="260" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 3 Nodes (Orange #FFE6CC border #D79B00) -->
+        <mxCell id="t3_1" value="ファン・関係者の評価&#xa;「本物のブルース」&#xa;確かな演奏技術への信頼" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="640" y="140" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_2" value="人柄・雰囲気&#xa;アットホームなライブ&#xa;ファンとの距離感の近さ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;align=left;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="640" y="230" width="260" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Connections (Optional visuals to show flow/support) -->
+        <mxCell id="edge1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#CCCCCC;" edge="1" parent="1" source="t1_1" target="t2_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#CCCCCC;" edge="1" parent="1" source="t1_3" target="t3_1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="320" y="355" />
+              <mxPoint x="320" y="400" />
+              <mxPoint x="620" y="400" />
+              <mxPoint x="620" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeColor=#CCCCCC;" edge="1" parent="1" source="t2_1" target="t3_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
