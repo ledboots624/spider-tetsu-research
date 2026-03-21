@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-03-21T22:03:54.803058",
+  "generated_at": "2026-03-21T23:25:47.302034",
   "generator": "AI Research Agent v3.0.0",
-  "total_sources": 36,
+  "total_sources": 32,
   "tier_summary": {
-    "tier1": 12,
-    "tier2": 8,
+    "tier1": 11,
+    "tier2": 7,
     "tier3": 7,
-    "tier4": 9
+    "tier4": 7
   },
-  "primary_source_count": 15,
+  "primary_source_count": 13,
   "sources": [
     {
       "source_type": "industry_report",
@@ -252,24 +252,6 @@
       "id": "SRC-013"
     },
     {
-      "source_type": "industry_report",
-      "title": "sources.json（統合レビュー生成ファイル）",
-      "locator": "~/.copilot/session-state/fb1c29ff-f221-448d-ad50-caa205914be1/files/sources.json",
-      "url": null,
-      "access_date": "2026-03-21",
-      "reliability_tier": "tier2",
-      "primary_source": true,
-      "community_score": null,
-      "reference_count": 1,
-      "referenced_by": [
-        "5:integration-review:claude-opus-4.6"
-      ],
-      "claim_summaries": [
-        "調査で参照されたソースは外部独立メディアを含まず、ソース分布に構造的偏りがある"
-      ],
-      "id": "SRC-014"
-    },
-    {
       "source_type": "community_data",
       "title": "スパイダーテツ公式サイト",
       "locator": "https://spider-tetsu.jimdosite.com/",
@@ -285,7 +267,7 @@
       "claim_summaries": [
         "スパイダーテツはRed Hot Wagonsを結成し、ワーゲンバスで全国を巡るライブスタイルを採用している"
       ],
-      "id": "SRC-015"
+      "id": "SRC-014"
     },
     {
       "source_type": "community_data",
@@ -303,7 +285,7 @@
       "claim_summaries": [
         "スパイダーテツは寺山修司作品でストーリーテラーとして出演するなど、ミュージカル・朗読劇へと活動領域を拡大している"
       ],
-      "id": "SRC-016"
+      "id": "SRC-015"
     },
     {
       "source_type": "community_data",
@@ -321,7 +303,7 @@
       "claim_summaries": [
         "2026年に竹中直人・カルメン・マキとの共演が予定されている"
       ],
-      "id": "SRC-017"
+      "id": "SRC-016"
     },
     {
       "source_type": "community_data",
@@ -339,7 +321,7 @@
       "claim_summaries": [
         "代表作「I'm Spider」は2019年に再発されており、録音作品よりもライブ・生演奏を核とする哲学を反映している可能性がある"
       ],
-      "id": "SRC-018"
+      "id": "SRC-017"
     },
     {
       "source_type": "community_data",
@@ -357,7 +339,7 @@
       "claim_summaries": [
         "ジャンゴ・ラインハルト、ハウリン・ウルフ、ウィリー・ジョンソンが主要な影響源であり、「生活に根ざした音楽」という共通軸で繋がっている"
       ],
-      "id": "SRC-019"
+      "id": "SRC-018"
     },
     {
       "source_type": "community_data",
@@ -375,7 +357,7 @@
       "claim_summaries": [
         "母親がジャズ・ブルースを弾く環境で育ち、「大江戸下町生まれ」の感性がブルースとの親和性を生んだ"
       ],
-      "id": "SRC-020"
+      "id": "SRC-019"
     },
     {
       "source_type": "community_data",
@@ -393,7 +375,7 @@
       "claim_summaries": [
         "スパイダーテツは「竹田和夫への師事」と「シカゴ渡米・オーティス・ラッシュとの共演」という二段階の音楽的洗礼を受けた"
       ],
-      "id": "SRC-021"
+      "id": "SRC-020"
     },
     {
       "source_type": "community_data",
@@ -411,7 +393,7 @@
       "claim_summaries": [
         "Red Hot Wagonsは海外の海軍基地でもライブを行った経験を持つ"
       ],
-      "id": "SRC-022"
+      "id": "SRC-021"
     },
     {
       "source_type": "unknown",
@@ -429,25 +411,7 @@
       "claim_summaries": [
         "投稿コミュニティの品質低下は炎上・離脱リスクを招く"
       ],
-      "id": "SRC-023"
-    },
-    {
-      "source_type": "unknown",
-      "title": "不明",
-      "locator": "unknown",
-      "url": null,
-      "access_date": "unknown",
-      "reliability_tier": "tier4",
-      "primary_source": false,
-      "community_score": null,
-      "reference_count": 1,
-      "referenced_by": [
-        "5:integration-review:claude-opus-4.6"
-      ],
-      "claim_summaries": [
-        "海外海軍基地でのライブパフォーマンスがあった"
-      ],
-      "id": "SRC-024"
+      "id": "SRC-022"
     },
     {
       "source_type": "community_data",
@@ -465,7 +429,7 @@
       "claim_summaries": [
         "シカゴ・ブルースの巨人オーティス・ラッシュのバースデーライブで同じステージに立ち演奏を共にした"
       ],
-      "id": "SRC-025"
+      "id": "SRC-023"
     },
     {
       "source_type": "unknown",
@@ -484,7 +448,7 @@
         "フェーズR1（1-2週）でデータモデル設計・初期投入・真偽ラベル運用を開始すべき",
         "フェーズR2（3-5週）でWeb MVP・10ページ資料・ライブ予定連携を公開すべき"
       ],
-      "id": "SRC-026"
+      "id": "SRC-024"
     },
     {
       "source_type": "unknown",
@@ -502,7 +466,7 @@
       "claim_summaries": [
         "フェーズR4（9-12週）でJP/EN対応・分析計測・SNS配信用素材自動化を実施すべき"
       ],
-      "id": "SRC-027"
+      "id": "SRC-025"
     },
     {
       "source_type": "unknown",
@@ -520,25 +484,7 @@
       "claim_summaries": [
         "フェーズR3（6-8週）でファン投稿導線・編集審査・改訂履歴管理を実装すべき"
       ],
-      "id": "SRC-028"
-    },
-    {
-      "source_type": "unknown",
-      "title": "本人証言（自己申告）",
-      "locator": "unknown",
-      "url": null,
-      "access_date": "unknown",
-      "reliability_tier": "tier4",
-      "primary_source": false,
-      "community_score": null,
-      "reference_count": 1,
-      "referenced_by": [
-        "5:integration-review:claude-opus-4.6"
-      ],
-      "claim_summaries": [
-        "オーティス・ラッシュとの共演があった"
-      ],
-      "id": "SRC-029"
+      "id": "SRC-026"
     },
     {
       "source_type": "unknown",
@@ -556,7 +502,7 @@
       "claim_summaries": [
         "スパイダーテツは日本ブルース第二世代（1980〜90年代）と第三世代（2000年代以降）の架け橋的存在であり、本場体験を持ちながら現代の文脈でブルースを再解釈し続けている"
       ],
-      "id": "SRC-030"
+      "id": "SRC-027"
     },
     {
       "source_type": "unknown",
@@ -574,7 +520,7 @@
       "claim_summaries": [
         "写真・動画・音源の権利不備は公開停止・クレームリスクを招く"
       ],
-      "id": "SRC-031"
+      "id": "SRC-028"
     },
     {
       "source_type": "community_data",
@@ -592,7 +538,7 @@
       "claim_summaries": [
         "10ページ共有資料を最初のMVP成果物にするべき"
       ],
-      "id": "SRC-032"
+      "id": "SRC-029"
     },
     {
       "source_type": "community_data",
@@ -610,7 +556,7 @@
       "claim_summaries": [
         "一次情報とコミュニティ情報の混在に対応する真偽ラベル運用が必要"
       ],
-      "id": "SRC-033"
+      "id": "SRC-030"
     },
     {
       "source_type": "community_data",
@@ -628,25 +574,7 @@
       "claim_summaries": [
         "事実の過剰断定（録音が残らない共演エピソード等）は信頼失墜リスクがある"
       ],
-      "id": "SRC-034"
-    },
-    {
-      "source_type": "official_document",
-      "title": "統合レビュー実行ログ",
-      "locator": "~/.copilot/session-state/fb1c29ff-f221-448d-ad50-caa205914be1/files/",
-      "url": null,
-      "access_date": "2026-03-21",
-      "reliability_tier": "tier1",
-      "primary_source": true,
-      "community_score": null,
-      "reference_count": 1,
-      "referenced_by": [
-        "5:integration-review:claude-opus-4.6"
-      ],
-      "claim_summaries": [
-        "統合レビューの成果物としてFINAL_REPORT.md（330行）、slides.md（203行）、sources.json（194行）の3ファイルが生成された"
-      ],
-      "id": "SRC-035"
+      "id": "SRC-031"
     },
     {
       "source_type": "unknown",
@@ -664,7 +592,7 @@
       "claim_summaries": [
         "スパイダーテツはシカゴでの本場経験と日本の下町情緒を融合させた独自スタイルを確立し、他のブルースマンとは一線を画す存在感を持つ"
       ],
-      "id": "SRC-036"
+      "id": "SRC-032"
     }
   ]
 }

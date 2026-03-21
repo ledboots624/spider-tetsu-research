@@ -36,3 +36,28 @@
 [2026-03-21 21:40:56 INFO] 所要時間: 20m13s
 [2026-03-21 21:40:56 INFO] バリデーション: PARTIAL
 [2026-03-21 21:40:56 ERROR] 一部ステップが失敗: 4/5
+[2026-03-21 23:13:04 INFO] 調査開始: ブルースマン　スパイダーテツ
+[2026-03-21 23:13:04 INFO] モード: full, エコノミー: False
+[2026-03-21 23:13:04 INFO] 既存プラン読み込み: default-full
+[2026-03-21 23:13:04 INFO] ━━━ Step 1/5: 情報収集 (gemini-3-pro-preview) ━━━
+[2026-03-21 23:13:04 INFO] Step 1: 既存出力あり、スキップ
+[2026-03-21 23:13:04 INFO] ━━━ Step 2/5: 深層分析 (claude-sonnet-4.6) ━━━
+[2026-03-21 23:13:04 INFO] Step 2: 既存出力あり、スキップ
+[2026-03-21 23:13:04 INFO] ━━━ Step 3/5: 技術戦略 (gpt-5.3-codex) ━━━
+[2026-03-21 23:13:04 INFO] Step 3: 既存出力あり、スキップ
+[2026-03-21 23:13:04 INFO] ━━━ Step 4/5: 再検証 (claude-sonnet-4.6) ━━━
+[2026-03-21 23:13:04 INFO] Step 4: 既存出力あり、スキップ
+[2026-03-21 23:13:04 INFO] ━━━ Step 5/5: 統合レビュー (claude-opus-4.6) ━━━
+[2026-03-21 23:13:04 DEBUG] LLM call: model=claude-opus-4.6, prompt_len=16192, timeout=1200s
+[2026-03-21 23:17:20 INFO] Step 5: 出力保存 (14130 chars)
+[2026-03-21 23:17:20 DEBUG] LLM call: model=claude-sonnet-4.6, prompt_len=15113, timeout=600s
+[2026-03-21 23:18:20 WARN] 不正な出力を検出 (model=claude-sonnet-4.6): メタテキストまたは空のMarkdown
+[2026-03-21 23:18:20 WARN] Step 5: エビデンス抽出失敗: 不正な出力 (model=claude-sonnet-4.6): Markdown見出しなし
+[2026-03-21 23:18:20 INFO] Step 5: 完了 (5m16s)
+[2026-03-21 23:18:20 INFO] バリデーション結果: PARTIAL (claims=39, no_evidence=0, no_source=10)
+[2026-03-21 23:18:20 INFO] ソースレジストリ生成: 32 sources
+[2026-03-21 23:18:20 INFO] ━━━ 調査完了 ━━━
+[2026-03-21 23:18:20 INFO] ワークスペース: /Users/shige/work/test-claude/remote-test/public/py-test
+[2026-03-21 23:18:20 INFO] ステップ: 5/5
+[2026-03-21 23:18:20 INFO] 所要時間: 5m16s
+[2026-03-21 23:18:20 INFO] バリデーション: PARTIAL

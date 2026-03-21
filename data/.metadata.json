@@ -6,6 +6,13 @@
       "details": {
         "final_report": "/Users/shige/work/test-claude/remote-test/public/py-test/FINAL_REPORT.md"
       }
+    },
+    {
+      "operation": "finalize",
+      "timestamp": "2026-03-21T23:36:19.961456",
+      "details": {
+        "final_report": "/Users/shige/work/test-claude/remote-test/public/py-test/FINAL_REPORT.md"
+      }
     }
   ]
 }

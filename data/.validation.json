@@ -1,23 +1,23 @@
 {
-  "validated_at": "2026-03-21T22:03:54.801926",
+  "validated_at": "2026-03-21T23:25:47.301029",
   "result": "PARTIAL",
-  "total_claims": 43,
+  "total_claims": 39,
   "claims_without_evidence": 0,
-  "evidence_without_source": 12,
+  "evidence_without_source": 10,
   "claims_without_confidence": 0,
   "confidence_distribution": {
-    "high": 19,
+    "high": 17,
     "medium": 15,
-    "low": 9
+    "low": 7
   },
   "reliability_tier_distribution": {
-    "tier1": 17,
-    "tier2": 9,
+    "tier1": 16,
+    "tier2": 8,
     "tier3": 7,
-    "tier4": 10
+    "tier4": 8
   },
   "primary_source": {
-    "true": 21,
-    "false": 22
+    "true": 19,
+    "false": 20
   }
 }

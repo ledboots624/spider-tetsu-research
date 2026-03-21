@@ -1,43 +1,488 @@
+# 統合レビューレポート：ブルースマン スパイダーテツ（Spider Tetsu）
 
+## 1. エグゼクティブサマリー
 
+本レポートは、ブルース・ギタリスト「スパイダーテツ（千田哲彦）」に関する4段階のリサーチ（情報収集・深層分析・技術戦略・再検証）を統合し、ファン・関係者間での情報共有を目的とした最終成果物である。
 
+**調査の結論**：スパイダーテツは、竹田和夫への師事と本場シカゴでの活動経験を持ち、Red Hot Wagonsを率いて東京を拠点に精力的にライブ活動を行うブルースマンである。近年は演劇・舞台への越境的活動でも注目を集めている。K&Tピックアップからのシグネチャーモデル発売は、機材面での評価の高さを示す。ただし、本調査で得られた情報は**本人・関係者発信のソースに80%以上依存**しており、独立した外部メディアによる裏付けが皆無である点は重大な制限事項である。
 
+**信頼度の総括**：
 
-
-
-
-Now I have a thorough understanding of the system. Let me look at the slides generator to understand the Marp format, then create the FINAL_REPORT.md and slides.
-
-Now I have full understanding. Let me create the integrated report and presentation slides. I'll work on both in parallel.
-
-Now I have complete understanding. Let me create the FINAL_REPORT.md and slides.md. First, let me check if there's an existing workspace to output to:
-
-Let me use the `create` tool directly instead of bash for file creation:
-
-Now let me create the Marp presentation slides (10 pages, ocean theme, for fans):
-
-Now let me also create the sources.json and generate the plan.md for the session:
-
-Let me verify the outputs are correct:
-
-All 3 files generated successfully. Here's a summary of the deliverables:
+| 分類 | 信頼度 |
+|------|--------|
+| 基本プロフィール（出身・ギター開始・竹田和夫への師事） | **high** |
+| 現在の活動（Red Hot Wagons・ライブ活動） | **high** |
+| シカゴ渡米・現地活動の事実 | **medium** |
+| オーティス・ラッシュとの共演エピソード | **low〜medium** |
+| 機材情報（K&T Spider-H） | **high** |
+| 演劇・舞台活動 | **medium** |
+| 日本ブルース史における位置づけ（世代論） | **low** |
 
 ---
 
-## 統合レビュー完了 🎸
+## 2. 調査設問
 
-**3ファイルを生成しました:**
+本リサーチは以下の問いに対する回答を目的とした。
 
-| ファイル | 内容 | 行数 |
-|---|---|---|
-| `FINAL_REPORT.md` | 統合レビューレポート（全11章） | 330行 |
-| `slides.md` | Marp形式プレゼン（10ページ, oceanテーマ） | 203行 |
-| `sources.json` | ソースレジストリ（10ソース） | 194行 |
+1. スパイダーテツの経歴とルーツはどのようなものか
+2. 海外（シカゴ）での経験はどのようなものであったか
+3. 現在のライブ活動の実態はどうか
+4. ギター・ブルースとの関わりはどのように深化してきたか
+5. ファン・関係者間で共有すべき主要エピソードと事実は何か
 
-**主要な判断:**
-- オーティス・ラッシュ共演 → 信頼度を **low〜medium** に引き下げ（「本人証言」注釈付き）
-- 「海外海軍基地ライブ」 → **出典不明のため資料から除外**
-- 技術戦略のスコープ逸脱 → 10ページプレゼンを最優先に再整理
-- ソース分布の構造的問題（外部独立メディア0%）を明記
+---
 
-**ファイル場所:** `~/.copilot/session-state/fb1c29ff-f221-448d-ad50-caa205914be1/files/`
+## 3. 主要発見事項
+
+### 発見事項 F1：基本プロフィールとルーツ
+
+**主張**：スパイダーテツ（本名：千田哲彦）は東京の下町出身。母親がジャズ・ブルースを演奏しており、15歳でギターを開始。CREATIONの竹田和夫に師事し、「竹田和夫＆エル・コヨーテス」のメンバーとして活動した。
+
+**根拠の強さ**：●●●○（3/4）— 公式サイトのプロフィールに明記。ただし生年・師事開始年・エル・コヨーテス在籍期間は不明。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high** |
+| source_type | official_document |
+| source_title | Spider Tetsu Official Website - Profile |
+| source_locator | https://spider-tetsu.jimdosite.com/spider-tetsu/ |
+| access_date | 2026-03-21 |
+| reliability_tier | tier1 |
+| primary_source | true |
+
+**注記**：生年、師事開始年、エル・コヨーテス在籍期間は全ステップを通じて確認されていない。プロフィールの基本情報として重要なギャップである。
+
+---
+
+### 発見事項 F2：シカゴ渡米と現地活動
+
+**主張**：単身渡米し、ブルースの本場シカゴで現地クラブに出入りし、セッションに参加した。
+
+**根拠の強さ**：●●○○（2/4）— 公式プロフィールに記載があるが、渡米年・帰国年・在シカゴ期間はいずれも不明。外部メディアでの裏付けなし。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **medium** |
+| source_type | official_document |
+| source_title | Spider Tetsu Official Website - Profile |
+| source_locator | https://spider-tetsu.jimdosite.com/spider-tetsu/ |
+| access_date | 2026-03-21 |
+| reliability_tier | tier1 |
+| primary_source | true |
+
+---
+
+### 発見事項 F3：オーティス・ラッシュとの共演エピソード
+
+**主張**：シカゴ・ブルースの巨匠オーティス・ラッシュのバースデーライブで同じステージに立ち演奏を共にした。
+
+**根拠の強さ**：●○○○（1/4）— 公式録音は存在せず、複数のプロフィール文で言及されるが、いずれも本人・関係者発信と推定される。米国側メディア・ブルース音楽データベースでの記録確認は未実施。「複数の独立した情報源」とされているが、実際には独立性が担保されていない。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **low〜medium**（再検証により情報収集時の「中〜高」から下方修正） |
+| source_type | community_data |
+| source_title | 各種ライブ告知・プロフィール文（本人・関係者発信と推定） |
+| source_locator | https://spider-tetsu.jimdosite.com/spider-tetsu/ |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+**再検証による指摘**：「セッション参加」と「著名アーティストとのステージ共演」は性質が異なるが、両者が混同されてシカゴ体験の重みが過大に見える構造がある。プレゼン資料では「本人証言による」旨を明記すべき。
+
+---
+
+### 発見事項 F4：Red Hot Wagons の活動
+
+**主張**：帰国後、Spider Walk Blues Bandを経て、現在は「Spider Tetsu & Red Hot Wagons」（Gt/Vo: Spider Tetsu、Upright Bass: Gane（白金正之助）、Drums: 吉岡優三）として東京・横浜・千葉・埼玉を中心にライブ活動。ビンテージのワーゲンバス（Type-2）で全国ツアーも行う。
+
+**根拠の強さ**：●●●○（3/4）— lit.link等のスケジュール情報で活動実態を確認可能。結成年は不明。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high** |
+| source_type | official_document |
+| source_title | Spider Tetsu lit.link（スケジュール情報） |
+| source_locator | https://lit.link/spidertetsu |
+| access_date | 2026-03-21 |
+| reliability_tier | tier1 |
+| primary_source | true |
+
+---
+
+### 発見事項 F5：演劇・舞台への越境活動
+
+**主張**：ミュージカルや朗読劇（寺山修司作品など）への楽曲提供・ストーリーテラー出演を行っている。2026年には「Gane & Spider」として竹中直人・カルメン・マキとの共演が予定。
+
+**根拠の強さ**：●●○○（2/4）— ライブ告知・スケジュール情報で確認可能だが、どの寺山作品にどの役割で関わったかの詳細は不明。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **medium** |
+| source_type | community_data |
+| source_title | Musicians Paradise JAM - Schedule |
+| source_locator | https://musicians-paradise-jam.com/ |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+### 発見事項 F6：K&T Pickup シグネチャーモデル「Spider-H」
+
+**主張**：日本のハイエンド・ピックアップブランド K&T から手巻きハムバッカー「Spider-H」が発売。PAFサウンドをベースにした設計。使用ギターにはSignature Model、ビンテージ国産ギター（Teisco EP-8, MJ-2L）、1959年製 Gibson Les Paul Special などがある。
+
+**根拠の強さ**：●●●●（4/4）— メーカー公式製品ページで確認可能。独立した第三者（メーカー）による裏付け。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high** |
+| source_type | industry_report |
+| source_title | K&T MODERN VINTAGE GUITARS - SPIDER-H Product Page |
+| source_locator | https://www.kt-pickup.com/product/spider-h-set/ |
+| access_date | 2026-03-21 |
+| reliability_tier | tier1 |
+| primary_source | true |
+
+**注記**：深層分析で「2012年エンドース→2017年発売、5年の開発期間」とあるが、2012年エンドース開始のソースが未確認。
+
+---
+
+### 発見事項 F7：ディスコグラフィ
+
+**主張**：代表作はアルバム「I'm Spider」（2019年再発）。全曲オリジナルのインストゥルメンタル作品で、スウィング・ジャズとブルースを融合。
+
+**根拠の強さ**：●●○○（2/4）— 公式サイトに記載あるが、初版発売年が不明。「2019年再発」の前の経緯が未確認。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **medium** |
+| source_type | official_document |
+| source_title | Spider Tetsu Official Website - Discography |
+| source_locator | https://spider-tetsu.jimdosite.com/spider-tetsu/ |
+| access_date | 2026-03-21 |
+| reliability_tier | tier1 |
+| primary_source | true |
+
+---
+
+## 4. 信頼度分布
+
+### 主張別信頼度マッピング
+
+```
+■ high（確度高）
+  ├─ 基本プロフィール（出身・ギター開始・竹田和夫師事）
+  ├─ Red Hot Wagons の現在の活動実態
+  └─ K&T Spider-H シグネチャーピックアップの存在と仕様
+
+■ medium（確度中）
+  ├─ シカゴ渡米・現地セッション参加
+  ├─ 演劇・舞台活動（寺山作品、竹中直人共演）
+  └─ ディスコグラフィ（「I'm Spider」の存在自体は確認）
+
+■ low〜medium（確度低〜中）
+  └─ オーティス・ラッシュとの共演エピソード
+
+■ low（確度低）
+  ├─ 海外海軍基地でのライブ経験（出典不明・要削除）
+  ├─ 日本ブルース史における「第二〜第三世代の架け橋」論（独自分類）
+  ├─ K&T エンドース開始年（2012年）
+  └─ ディスコグラフィの「薄さ」が哲学的選択であるという解釈
+
+### ソースカバレッジ
+
+```
+本人・関係者運営サイト       ████████░░  80%
+機材メーカーサイト（K&T）    ██░░░░░░░░  10%
+SNS・ファン記録              █░░░░░░░░░   5%
+外部独立メディア             ░░░░░░░░░░   0%  ← 深刻な欠落
+音楽専門誌・データベース     ░░░░░░░░░░   0%  ← 深刻な欠落
+学術・音楽史研究             ░░░░░░░░░░   0%
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（この分析自体の信頼度） |
+| source_type | unknown |
+| source_title | 本レポート内で実施したソースカバレッジ分析 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+## 5. 矛盾する主張
+
+### 矛盾 C1：オーティス・ラッシュ共演の信頼度評価
+
+| ステップ | 評価 | 根拠 |
+|----------|------|------|
+| 情報収集 | tier2（中程度の信頼性） | 複数のプロフィール文で言及 |
+| 深層分析 | 中〜高 | 複数の独立したプロフィール文に同様の記述 |
+| **再検証** | **低〜中に下方修正** | 「独立した」とされる複数のプロフィール文は、実際には本人・関係者発信の可能性が高く、独立した裏付けにはならない |
+
+**統合判定**：再検証の指摘は妥当。**低〜中（low〜medium）** を採用する。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（矛盾の存在に関する確度） |
+| source_type | unknown |
+| source_title | 先行ステップ間の主張比較分析 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+### 矛盾 C2：ディスコグラフィの「薄さ」の解釈
+
+| ステップ | 主張 |
+|----------|------|
+| 深層分析 | 「録音嫌い＝ライブアートとしての正統性の証左」という**肯定的解釈** |
+| 再検証 | レーベル関係・資金制約・タイミング等、複数の理由がありうる。「哲学的選択」断定は**根拠不足** |
+
+**統合判定**：再検証の指摘は妥当。録音作品が少ない理由は不明であり、特定の解釈を採用しない。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（矛盾の存在に関する確度） |
+| source_type | unknown |
+| source_title | 先行ステップ間の主張比較分析 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+### 矛盾 C3：「海外海軍基地でのライブ」の出典
+
+| ステップ | 記述 |
+|----------|------|
+| 深層分析 | 「Red Hot Wagonsが海外の海軍基地でもライブ経験を持つ」と記述。「先行レポートで軽く触れられている」とある |
+| 情報収集 | **該当記述なし** |
+| 再検証 | 先行レポートに記載がないことを確認。**出典不明** |
+
+**統合判定**：エビデンスが確認できない。**本レポートでは採用しない**（削除扱い）。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（矛盾の存在に関する確度） |
+| source_type | unknown |
+| source_title | 先行ステップ間の主張比較分析 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+### 矛盾 C4：技術戦略のスコープ逸脱
+
+| ステップ | 主張 |
+|----------|------|
+| 技術戦略 | 12週間のWebサービス構築ロードマップ（KB管理、ファン投稿、JP/EN二言語化等） |
+| 再検証 | 元リクエストは10ページのプレゼン資料。大規模Web構築はスコープ外 |
+
+**統合判定**：再検証の指摘は妥当。技術戦略の提案は参考情報として保持するが、**即時の優先事項は10ページのプレゼン資料作成**であり、Web展開は将来の任意オプションとする。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（矛盾の存在に関する確度） |
+| source_type | unknown |
+| source_title | 先行ステップ間のスコープ整合性分析 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+## 6. 欠落データ
+
+| ID | 欠落情報 | 重要度 | プレゼン資料への影響 | 補完方法の提案 |
+|----|----------|--------|---------------------|----------------|
+| G1 | 生年・年齢 | 🔴 高 | プロフィールページの基本情報欠落 | 本人・関係者への直接確認 |
+| G2 | 渡米年・帰国年・在シカゴ期間 | 🔴 高 | 経歴タイムラインが作れない | 同上 |
+| G3 | 「竹田和夫＆エル・コヨーテス」在籍期間 | 🟡 中 | 師弟関係の具体性が弱い | 竹田和夫側の記録調査 |
+| G4 | 「I'm Spider」初版発売年 | 🟡 中 | ディスコグラフィの正確性 | CD現物・音楽配信サービス確認 |
+| G5 | 代表ライブの日時・会場・動員数 | 🟡 中 | 活動実績の具体性が弱い | 過去のライブ告知アーカイブ調査 |
+| G6 | Red Hot Wagons 結成年 | 🟡 中 | バンド紹介の正確性 | 本人・関係者確認 |
+| G7 | 受賞歴・メディア掲載歴 | 🟡 中 | 外部評価の証拠皆無 | 音楽誌アーカイブ・ライブナタリー等検索 |
+| G8 | 寺山修司作品との関係の詳細 | 🟡 中 | 演劇ページの具体性 | 演劇関連メディア調査 |
+| G9 | 外部の音楽評論家・他ミュージシャンからの評価 | 🟢 低 | 第三者視点の不在 | 音楽専門誌・インタビュー記事調査 |
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（ギャップの存在に関する確度） |
+| source_type | unknown |
+| source_title | 全ステップ横断のギャップ分析 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+## 7. 制限事項
+
+### L1：ソースの独立性の欠如
+
+本調査の情報源は約80%が本人・関係者が管理するWebメディア（公式サイト、lit.link、ブログ）に依存している。音楽専門誌、独立メディア、音楽データベース（Discogs、AllMusic等）による裏付けが一切含まれていない。これは「本人が語る自分の歴史」のみを収集している状態であり、バイオグラフィとしての客観性に限界がある。
+
+### L2：肯定バイアスの構造的存在
+
+調査目的が「ファンや関係者でスパイダーさんの素晴らしさを共有したい」であるため、全ステップにおいて肯定的解釈が優先される構造がある。活動規模の限界、認知度、録音作品の少なさといった「中立的事実」が意図的に回避・美化される傾向が認められた。
+
+### L3：時系列情報の不完全性
+
+生年、渡米年、帰国年、バンド結成年、師事期間など、キャリアの骨格となる年代情報がほぼ全て欠落しているため、正確な経歴タイムラインを構築できない。
+
+### L4：深層分析における独自解釈の混入
+
+深層分析ステップで提示された「日本ブルース第一〜第三世代の分類」「移動・旅・路上の通底テーマ」「大量生産への抵抗という一貫した美学」等は、外部の音楽史研究に基づかない独自解釈であり、事実と解釈の境界が不明瞭になっている。
+
+### L5：技術戦略のスコープ逸脱
+
+技術戦略ステップが12週間のWebサービス構築計画を提案しているが、これは元のリクエスト（10ページのファン向けプレゼン資料）の範囲を大幅に超過している。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（制限事項の存在に関する確度） |
+| source_type | unknown |
+| source_title | 全ステップ横断のメタ分析 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+## 8. 未解決事項
+
+| ID | 未解決事項 | 解決の方向性 | 優先度 |
+|----|-----------|-------------|--------|
+| U1 | オーティス・ラッシュ共演の独立証拠 | 米国ブルース関連メディア・データベースの調査、シカゴ地元紙アーカイブ検索 | 高 |
+| U2 | 渡米年・帰国年・在シカゴ期間の特定 | 本人・関係者への直接確認、またはインタビュー記事の発掘 | 高 |
+| U3 | 外部メディアによる評価・言及の存在確認 | ライブナタリー、Blues & Soul Records、Guitar Magazine等の検索 | 高 |
+| U4 | 「I'm Spider」の初版年と制作背景 | CD現物確認、音楽配信サービス、Discogs等 | 中 |
+| U5 | 寺山修司作品との具体的関わり | 演劇関連メディア・パンフレット等の調査 | 中 |
+| U6 | K&T Pickup エンドース開始年の確認 | K&T公式サイト、メーカーへの問い合わせ | 低 |
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（未解決事項の存在に関する確度） |
+| source_type | unknown |
+| source_title | 全ステップ横断の残課題分析 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+## 9. 結論
+
+### 確実に共有できる事実
+
+スパイダーテツ（千田哲彦）は東京下町出身のブルース・ギタリスト兼ボーカリストであり、CREATIONの竹田和夫に師事した後、シカゴに渡って本場のブルースを体験した。現在は「Spider Tetsu & Red Hot Wagons」を率い、東京・横浜を中心にライブ活動を展開している。K&T Pickupからシグネチャーモデル「Spider-H」が発売されていることは、プロフェッショナルとしての評価を客観的に裏付ける数少ない独立エビデンスである。近年は演劇・舞台への越境的活動も注目される。
+
+### 注意を要する情報
+
+オーティス・ラッシュとの共演エピソードは本人発信のみで独立した裏付けがなく、プレゼン資料で使用する際は「本人証言による」旨の注釈を付すべきである。日本ブルース史における位置づけ、ディスコグラフィの少なさの解釈、移動哲学や美学的一貫性の議論は分析者による独自解釈であり、事実として提示すべきではない。
+
+### ファン向けプレゼン資料への推奨
+
+10ページのプレゼン資料は以下の構成を推奨する。深層分析の10ページ提案をベースに、再検証の指摘を反映して修正したものである。
+
+| ページ | テーマ | 注意事項 |
+|--------|--------|----------|
+| 1 | 表紙・イントロダクション | 「東京の下町のブルースマン」をキャッチコピーに |
+| 2 | 音楽のルーツ：母からの遺伝子 | ジャズ・ブルースを弾く母親の影響 |
+| 3 | 師・竹田和夫との出会い | CREATION、エル・コヨーテスの文脈 |
+| 4 | シカゴへの旅 | 渡米年は「〇〇年代」のおおまかな表記。共演は「本人証言」と明記 |
+| 5 | Red Hot Wagons の結成とサウンド | メンバー紹介、ワーゲンバスの写真映え |
+| 6 | 音へのこだわり：Spider-H | K&T公式情報をベースに（信頼度 high） |
+| 7 | ライブ活動の軌跡 | 定期的な出演会場、ツアースタイル |
+| 8 | 演劇・舞台への越境 | 寺山修司作品、竹中直人・カルメン・マキ共演 |
+| 9 | ディスコグラフィ：「I'm Spider」 | 作品紹介。解釈の押しつけは避ける |
+| 10 | 語り継ぐべきブルースマン | ファンコミュニティへの呼びかけ |
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **medium**（提案としての適切性に関する確度） |
+| source_type | unknown |
+| source_title | 先行全ステップの統合に基づく構成提案 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+## 10. 推奨アクション
+
+### 即時対応（プレゼン資料作成前）
+
+| ID | アクション | 優先度 | 理由 |
+|----|-----------|--------|------|
+| A1 | オーティス・ラッシュ共演の表現を「本人証言による」に修正 | 🔴 最優先 | 未検証エピソードの断定的使用はファンコミュニティの信頼を損なうリスク |
+| A2 | 「海外海軍基地ライブ」の記述を削除 | 🔴 最優先 | 出典が確認できない |
+| A3 | 年代不明の箇所を「〇〇年代」等のおおまかな表記に統一 | 🟡 重要 | 不正確な年号の創出を防止 |
+| A4 | 深層分析の独自解釈（世代論・美学論）を「事実」と分離 | 🟡 重要 | 事実と解釈の混同を防止 |
+
+### 短期対応（プレゼン資料作成と並行）
+
+| ID | アクション | 優先度 | 理由 |
+|----|-----------|--------|------|
+| A5 | 外部音楽メディア（ライブナタリー等）でのスパイダーテツ言及を追加検索 | 🟡 重要 | ソースの独立性向上 |
+| A6 | 本人・関係者への基本プロフィール情報（生年・渡米年等）の確認 | 🟡 重要 | キャリア年表の構築 |
+| A7 | 「I'm Spider」のDiscogs・音楽配信サービスでの登録情報確認 | 🟢 推奨 | ディスコグラフィの正確性向上 |
+
+### 中長期対応（将来のオプション）
+
+| ID | アクション | 優先度 | 理由 |
+|----|-----------|--------|------|
+| A8 | ファン間の情報共有プラットフォームの検討（技術戦略レポート参照） | 🟢 任意 | コミュニティの持続的活動基盤 |
+| A9 | JP/EN二言語化の検討 | 🟢 任意 | シカゴ体験を持つアーティストとして海外ファンへの訴求可能性 |
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **medium**（推奨事項としての適切性に関する確度） |
+| source_type | unknown |
+| source_title | 全ステップの統合分析に基づく推奨 |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier2 |
+| primary_source | false |
+
+---
+
+## 11. ソースレジストリ
+
+| ID | source_type | source_title | source_locator | access_date | reliability_tier | primary_source | 使用箇所 |
+|----|-------------|-------------|----------------|-------------|-----------------|---------------|----------|
+| S01 | official_document | Spider Tetsu Official Website - Profile | https://spider-tetsu.jimdosite.com/spider-tetsu/ | 2026-03-21 | tier1 | true | F1, F2, F3, F7 |
+| S02 | official_document | Spider Tetsu lit.link | https://lit.link/spidertetsu | 2026-03-21 | tier1 | true | F1, F4 |
+| S03 | industry_report | K&T MODERN VINTAGE GUITARS - SPIDER-H Product Page | https://www.kt-pickup.com/product/spider-h-set/ | 2026-03-21 | tier1 | true | F6 |
+| S04 | official_document | Spider Tetsu Blog - Signature Model | https://spidertetsu.blogspot.com/ | 2026-03-21 | tier1 | true | F6 |
+| S05 | community_data | Musicians Paradise JAM - Schedule | https://musicians-paradise-jam.com/ | 2026-03-21 | tier2 | false | F5 |
+| S06 | industry_report | K&T MODERN VINTAGE GUITARS - Player Page | https://www.kt-pickup.com/player/spider-tetsu/ | 2026-03-21 | tier1 | true | F6 |
+| S07 | community_data | 各種ライブ告知・プロフィール文 | 複数（本人・関係者発信と推定） | 2026-03-21 | tier2 | false | F3, F5 |
+
+### ソースの信頼性に関する総合注記
+
+- **tier1ソースの実質的独立性**：S01, S02, S04は本人または関係者が管理するWebメディアであり、形式的にはtier1（公式文書）だが、「独立した第三者による裏付け」としては機能しない。実質的な独立ソースはS03（K&T製品ページ）およびS06（K&Tプレイヤーページ）のみ。
+- **外部独立メディアの完全欠如**：音楽専門誌、ライブ情報サイト、音楽データベース等による言及が一本も含まれていない。これは本調査の最大の制限事項である。
+
+| 項目 | 値 |
+|------|-----|
+| 信頼度 | **high**（ソースレジストリの正確性に関する確度） |
+| source_type | unknown |
+| source_title | 全ステップで使用されたソースの統合レジストリ |
+| source_locator | N/A |
+| access_date | 2026-03-21 |
+| reliability_tier | tier1 |
+| primary_source | false |

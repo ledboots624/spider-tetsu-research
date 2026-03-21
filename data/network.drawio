@@ -1,134 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="app.diagrams.net" modified="2026-03-21T22:15:00.000Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" etag="rYh1234567890abcdef" version="26.0.4" type="device">
-  <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3fa">
-    <mxGraphModel dx="1420" dy="860" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+<mxfile host="Electron" modified="2026-03-21T15:00:00.000Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.0.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" version="24.0.0" etag="abcdef123456" type="device">
+  <diagram id="diagram-1" name="Page-1">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <!-- Spider Tetsu: Center, Hexagon, Blue -->
-        <mxCell id="2" value="スパイダーテツ&#xa;(Spider Tetsu)" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="360" y="360" width="160" height="120" as="geometry" />
+        <!-- Spider Tetsu -->
+        <mxCell id="spider" value="スパイダーテツ&#10;(千田 哲彦)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#4472C4;fontColor=#ffffff;strokeColor=#2D4B81;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="280" width="140" height="140" as="geometry" />
         </mxCell>
-        <!-- Kazuo Takeda: Top Left, Rounded Rect, Green -->
-        <mxCell id="3" value="竹田和夫&#xa;(Kazuo Takeda)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="160" y="200" width="120" height="60" as="geometry" />
+        <!-- Kazuo Takeda -->
+        <mxCell id="takeda" value="竹田和夫&#10;(師匠/CREATION)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#70AD47;fontColor=#ffffff;strokeColor=#4F7D32;" vertex="1" parent="1">
+          <mxGeometry x="120" y="200" width="120" height="120" as="geometry" />
         </mxCell>
-        <!-- CREATION: Left of Takeda, Rounded Rect, Gray -->
-        <mxCell id="4" value="CREATION" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="20" y="200" width="100" height="60" as="geometry" />
+        <!-- Otis Rush -->
+        <mxCell id="otis" value="オーティス・ラッシュ&#10;(シカゴブルースの巨人)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#70AD47;fontColor=#ffffff;strokeColor=#4F7D32;" vertex="1" parent="1">
+          <mxGeometry x="600" y="80" width="140" height="100" as="geometry" />
         </mxCell>
-        <!-- El Coyotes: Below Takeda, Rounded Rect, Green -->
-        <mxCell id="5" value="エル・コヨーテス" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="160" y="300" width="120" height="60" as="geometry" />
+        <!-- Chicago -->
+        <mxCell id="chicago" value="シカゴ&#10;(本場・修行)" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ED7D31;fontColor=#ffffff;strokeColor=#A0522D;" vertex="1" parent="1">
+          <mxGeometry x="400" y="80" width="120" height="80" as="geometry" />
         </mxCell>
-        <!-- Otis Rush: Top Right, Rounded Rect, Orange -->
-        <mxCell id="6" value="オーティス・ラッシュ&#xa;(Otis Rush)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="580" y="200" width="140" height="60" as="geometry" />
+        <!-- Red Hot Wagons -->
+        <mxCell id="wagons" value="Red Hot Wagons&#10;(リーダーバンド)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4472C4;fontColor=#ffffff;strokeColor=#2D4B81;" vertex="1" parent="1">
+          <mxGeometry x="600" y="380" width="140" height="60" as="geometry" />
         </mxCell>
-        <!-- Chicago: Right of Otis, Ellipse, Orange -->
-        <mxCell id="7" value="シカゴ&#xa;(本場)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="760" y="200" width="80" height="80" as="geometry" />
+        <!-- El Coyotes -->
+        <mxCell id="coyotes" value="竹田和夫＆&#10;エル・コヨーテス" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#70AD47;fontColor=#ffffff;strokeColor=#4F7D32;" vertex="1" parent="1">
+          <mxGeometry x="110" y="80" width="140" height="60" as="geometry" />
         </mxCell>
-        <!-- Mother: Bottom Left, Ellipse, Gray -->
-        <mxCell id="8" value="母親&#xa;(ジャズ/ブルース)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="160" y="500" width="100" height="100" as="geometry" />
+        <!-- Tokyo -->
+        <mxCell id="tokyo" value="東京・下町&#10;(出身・拠点)" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ED7D31;fontColor=#ffffff;strokeColor=#A0522D;" vertex="1" parent="1">
+          <mxGeometry x="370" y="500" width="120" height="80" as="geometry" />
         </mxCell>
-        <!-- Tokyo Shitamachi: Below Mother, Ellipse, Gray -->
-        <mxCell id="9" value="東京下町" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="170" y="630" width="80" height="80" as="geometry" />
+        <!-- K&T -->
+        <mxCell id="kt" value="K&amp;T MODERN&#10;VINTAGE GUITARS" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ED7D31;fontColor=#ffffff;strokeColor=#A0522D;" vertex="1" parent="1">
+          <mxGeometry x="140" y="400" width="140" height="60" as="geometry" />
         </mxCell>
-        <!-- K&T Guitars: Bottom Right, Rounded Rect, Green -->
-        <mxCell id="10" value="K&amp;T&#xa;Modern Vintage Guitars" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="580" y="500" width="160" height="60" as="geometry" />
-        </mxCell>
-        <!-- Spider-H: Right of K&T, Ellipse, Green -->
-        <mxCell id="11" value="Spider-H&#xa;(PU)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="780" y="490" width="80" height="80" as="geometry" />
-        </mxCell>
-        <!-- Fans: Bottom, Ellipse, Blue -->
-        <mxCell id="12" value="ファン・関係者" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="390" y="600" width="100" height="100" as="geometry" />
-        </mxCell>
-        <!-- Blues: Top, Ellipse, Blue -->
-        <mxCell id="13" value="ブルース&#xa;(Blues)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="390" y="80" width="100" height="100" as="geometry" />
-        </mxCell>
-        <!-- Live Activities: Right of Fans, Rounded Rect, Blue -->
-        <mxCell id="14" value="ライブ活動&#xa;(国内・海外)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" vertex="1" parent="1">
-          <mxGeometry x="540" y="620" width="120" height="60" as="geometry" />
+        <!-- Theater -->
+        <mxCell id="theater" value="演劇・舞台&#10;(楽曲提供・出演)" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#ED7D31;fontColor=#ffffff;strokeColor=#A0522D;" vertex="1" parent="1">
+          <mxGeometry x="610" y="250" width="120" height="80" as="geometry" />
         </mxCell>
         <!-- Edges -->
-        <!-- Spider Tetsu -> Kazuo Takeda (師事) -->
-        <mxCell id="20" value="師事" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=1;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="3">
+        <mxCell id="e1" value="師事" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="takeda" target="spider">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Kazuo Takeda -> CREATION (所属) -->
-        <mxCell id="21" value="所属" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="3" target="4">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <!-- Spider Tetsu -> El Coyotes (メンバー参加) -->
-        <mxCell id="22" value="メンバー参加" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="5">
+        <mxCell id="e2" value="メンバー" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="spider" target="coyotes">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="360" y="420" />
-              <mxPoint x="320" y="420" />
-              <mxPoint x="320" y="330" />
+               <mxPoint x="380" y="290" />
+               <mxPoint x="380" y="110" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <!-- Spider Tetsu -> Otis Rush (共演/尊敬) -->
-        <mxCell id="23" value="バースデーライブ共演" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="6">
+        <mxCell id="e3" value="リーダー" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="takeda" target="coyotes">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Otis Rush -> Chicago (拠点) -->
-        <mxCell id="24" value="拠点" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="6" target="7">
+        <mxCell id="e4" value="渡米・修行" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="spider" target="chicago">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Spider Tetsu -> Chicago (渡米・修行) -->
-        <mxCell id="25" value="渡米・修行" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="7">
-          <mxGeometry relative="1" as="geometry">
+        <mxCell id="e5" value="共演" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="spider" target="otis">
+           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="500" y="320" />
-              <mxPoint x="800" y="320" />
+               <mxPoint x="480" y="290" />
+               <mxPoint x="550" y="290" />
+               <mxPoint x="550" y="160" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <!-- Mother -> Spider Tetsu (音楽的影響) -->
-        <mxCell id="26" value="音楽的影響" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="8" target="2">
+        <mxCell id="e6" value="活動拠点" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="otis" target="chicago">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Spider Tetsu -> Tokyo Shitamachi (出身) -->
-        <mxCell id="27" value="出身" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="9">
-          <mxGeometry relative="1" as="geometry">
-             <Array as="points">
-              <mxPoint x="440" y="560" />
-              <mxPoint x="238" y="560" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <!-- Spider Tetsu -> K&T Guitars (機材使用) -->
-        <mxCell id="28" value="機材愛用" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="10">
+        <mxCell id="e7" value="結成・リーダー" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="spider" target="wagons">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- K&T Guitars -> Spider-H (開発) -->
-        <mxCell id="29" value="シグネチャーモデル開発" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="10" target="11">
+        <mxCell id="e8" value="拠点・ルーツ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="spider" target="tokyo">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Spider Tetsu -> Fans (共有) -->
-        <mxCell id="30" value="魅了・共有" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="12">
+        <mxCell id="e9" value="Spider-H提供" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="kt" target="spider">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <!-- Spider Tetsu -> Blues (継承) -->
-        <mxCell id="31" value="伝統継承・独自解釈" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="13">
+        <mxCell id="e10" value="楽曲提供" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="spider" target="theater">
           <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-         <!-- Spider Tetsu -> Live Activities (活動) -->
-        <mxCell id="32" value="精力的に展開" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#000000;" edge="1" parent="1" source="2" target="14">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="500" y="650" />
-            </Array>
-          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>

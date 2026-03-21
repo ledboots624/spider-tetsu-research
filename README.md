@@ -20,13 +20,17 @@
 |---------|------|
 | [FINAL_REPORT.md](FINAL_REPORT.md) | 最終レポート |
 | [data/sources.json](data/sources.json) | ソースレジストリ |
+| [data/diagram.drawio](data/diagram.drawio) | 関係図（draw.io XML） |
+| [diagram.svg](diagram.svg) | 関係図（SVG） |
+| [data/slides.md](data/slides.md) | スライド（Marp Markdown） |
+| [slides.html](slides.html) | スライド（HTML） |
 
 ## メタデータ
 
 | 項目 | 値 |
 |------|---|
 | 生成方式 | AI Research Agent v3.0.0 |
-| 生成日時 | 2026-03-21 22:03 |
+| 生成日時 | 2026-03-21 23:25 |
 | パイプライン | default-full |
 | モード | full |
 | ステップ数 | 5 |
@@ -149,25 +153,25 @@
 
 ### 05-integration-review-claude-opus-4.6.md
 
+# 統合レビューレポート：ブルースマン スパイダーテツ（Spider Tetsu）
 
+## 1. エグゼクティブサマリー
 
+本レポートは、ブルース・ギタリスト「スパイダーテツ（千田哲彦）」に関する4段階のリサーチ（情報収集・深層分析・技術戦略・再検証）を統合し、ファン・関係者間での情報共有を目的とした最終成果物である。
 
+**調査の結論**：スパイダーテツは、竹田和夫への師事と本場シカゴでの活動経験を持ち、Red Hot Wagonsを率いて東京を拠点に精力的にライブ活動を行うブルースマンである。近年は演劇・舞台への越境的活動でも注目を集めている。K&Tピックアップからのシグネチャーモデル発売は、機材面での評価の高さを示す。ただし、本調査で得られた情報は**本人・関係者発信のソースに80%以上依存**しており、独立した外部メディアによる裏付けが皆無である点は重大な制限事項である。
 
+**信頼度の総括**：
 
-
-
-
-Now I have a thorough understanding of the system. Let me look at the slides generator to understand the Marp format, then create the FINAL_REPORT.md and slides.
-
-Now I have full understanding. Let me create the integrated report and presentation slides. I'll work on both in parallel.
-
-Now I have complete understanding. Let me create the FINAL_REPORT.md and slides.md. First, let me check if there's an existing workspace to output to:
-
-Let me use the `create` tool directly instead of bash for file creation:
-
-Now let me create the Marp presentation slides (10 pages, ocean theme, for fans):
-
-Now let me also create the sources.json and generate the plan.md for the session:
+| 分類 | 信頼度 |
+|------|--------|
+| 基本プロフィール（出身・ギター開始・竹田和夫への師事） | **high** |
+| 現在の活動（Red Hot Wagons・ライブ活動） | **high** |
+| シカゴ渡米・現地活動の事実 | **medium** |
+| オーティス・ラッシュとの共演エピソード | **low〜medium** |
+| 機材情報（K&T Spider-H） | **high** |
+| 演劇・舞台活動 | **medium** |
+| 日本ブルース史における位置づけ（世代論） | **low** |
 
 
 *... 全文は [05-integration-review-claude-opus-4.6.md](steps/05-integration-review-claude-opus-4.6.md) を参照*
@@ -177,11 +181,11 @@ Now let me also create the sources.json and generate the plan.md for the session
 
 **バリデーション結果:** PARTIAL
 
-- 総主張数: 43
-- 信頼度分布: high=19, medium=15, low=9
-- ソースティア: tier1=17, tier2=9, tier3=7, tier4=10
-- 一次情報: 21件 / 二次情報: 22件
-- 総ソース数: 36
+- 総主張数: 39
+- 信頼度分布: high=17, medium=15, low=7
+- ソースティア: tier1=16, tier2=8, tier3=7, tier4=8
+- 一次情報: 19件 / 二次情報: 20件
+- 総ソース数: 32
 
 ---
 

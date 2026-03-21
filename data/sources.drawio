@@ -1,102 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mxfile host="Electron" modified="2026-03-21T13:15:00.000Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.9.9 Chrome/85.0.4183.121 Electron/10.1.5 Safari/537.36" etag="rWq1" version="13.9.9" type="device">
-  <diagram id="SpiderTetsu-Sources" name="ReliabilityDistribution">
+<mxfile host="Electron" modified="2026-03-21T15:05:00.000Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/16.5.1 Chrome/96.0.4664.110 Electron/16.2.4 Safari/537.36" version="16.5.1" type="device">
+  <diagram id="SourceReliabilityChart" name="Source Reliability Distribution">
     <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         
-        <!-- Title -->
-        <mxCell id="title" value="スパイダーテツ：情報ソース信頼性分布チャート" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="20" width="760" height="40" as="geometry" />
+        <!-- Central Node -->
+        <mxCell id="root_node" value="スパイダーテツ&lt;br&gt;情報ソース信頼性分布" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#333333;strokeColor=#333333;fontColor=#FFFFFF;fontStyle=1;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="360" y="280" width="160" height="80" as="geometry" />
         </mxCell>
 
-        <!-- Lanes -->
-        <!-- Tier 1 Lane -->
-        <mxCell id="tier1_lane" value="Tier 1: 公式情報・検証済み (High)" style="swimlane;horizontal=0;startSize=40;fillColor=#f5faff;strokeColor=#4472C4;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="80" width="760" height="150" as="geometry" />
+        <!-- Tier 1 Branch (Official/Verified) -->
+        <mxCell id="tier1_node" value="Tier 1: 公式・確証済み&lt;br&gt;(High Reliability)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=#2F528F;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="80" width="160" height="60" as="geometry" />
         </mxCell>
-        <!-- Tier 2 Lane -->
-        <mxCell id="tier2_lane" value="Tier 2: コミュニティ・伝聞 (Med-High)" style="swimlane;horizontal=0;startSize=40;fillColor=#fafff5;strokeColor=#70AD47;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="240" width="760" height="150" as="geometry" />
+        
+        <mxCell id="t1_1" value="基本プロフィール&lt;br&gt;(本名・出身・開始年齢)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="160" y="40" width="140" height="50" as="geometry" />
         </mxCell>
-        <!-- Tier 3 Lane -->
-        <mxCell id="tier3_lane" value="Tier 3: 分析・推測 (Medium)" style="swimlane;horizontal=0;startSize=40;fillColor=#fffbf5;strokeColor=#ED7D31;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="400" width="760" height="150" as="geometry" />
+        <mxCell id="t1_2" value="竹田和夫(CREATION)&lt;br&gt;への師事・活動歴" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="370" y="-10" width="140" height="50" as="geometry" />
         </mxCell>
-        <!-- Tier 4 Lane -->
-        <mxCell id="tier4_lane" value="Tier 4: 未検証・計画 (Low)" style="swimlane;horizontal=0;startSize=40;fillColor=#f0f0f0;strokeColor=#666666;fontColor=#000000;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="40" y="560" width="760" height="150" as="geometry" />
+        <mxCell id="t1_3" value="K&amp;T Spider-H&lt;br&gt;シグネチャー機材" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="580" y="40" width="140" height="50" as="geometry" />
         </mxCell>
-
-        <!-- Nodes for Tier 1 -->
-        <mxCell id="t1_1" value="公式プロフィール&#xa;出身・ルーツ・師事(竹田和夫)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier1_lane">
-          <mxGeometry x="60" y="40" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="t1_2" value="ライブ活動実態&#xa;Red Hot Wagons &amp; 全国ツアー" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier1_lane">
-          <mxGeometry x="290" y="40" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="t1_3" value="使用機材・製品&#xa;K&amp;T Spider-H (シグネチャー)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4472C4;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier1_lane">
-          <mxGeometry x="520" y="40" width="200" height="60" as="geometry" />
+        <mxCell id="t1_4" value="Red Hot Wagons&lt;br&gt;現在の活動実態" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="580" y="100" width="140" height="50" as="geometry" />
         </mxCell>
 
-        <!-- Nodes for Tier 2 -->
-        <mxCell id="t2_1" value="共演エピソード(要検証)&#xa;Otis Rush バースデーライブ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier2_lane">
-          <mxGeometry x="60" y="45" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="t2_2" value="情報管理要件&#xa;真偽ラベル＆ナレッジDB" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier2_lane">
-          <mxGeometry x="290" y="45" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="t2_3" value="機材開発背景&#xa;5年の開発期間とこだわり" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier2_lane">
-          <mxGeometry x="520" y="45" width="200" height="60" as="geometry" />
+        <!-- Tier 2 Branch (Probable/Testimony) -->
+        <mxCell id="tier2_node" value="Tier 2: 高蓋然性・証言&lt;br&gt;(Medium-High)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#70AD47;strokeColor=#548235;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="280" width="160" height="60" as="geometry" />
         </mxCell>
 
-        <!-- Nodes for Tier 3 -->
-        <mxCell id="t3_1" value="音楽的影響分析&#xa;Django / Howlin' Wolf" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ED7D31;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier3_lane">
-          <mxGeometry x="60" y="45" width="200" height="60" as="geometry" />
+        <mxCell id="t2_1" value="オーティス・ラッシュ&lt;br&gt;共演エピソード(録音なし)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="650" y="190" width="160" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="t3_2" value="活動位置づけ分析&#xa;ブルース世代間の架け橋" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ED7D31;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier3_lane">
-          <mxGeometry x="290" y="45" width="200" height="60" as="geometry" />
+        <mxCell id="t2_2" value="シカゴ渡米・&lt;br&gt;現地セッション詳細" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="840" y="260" width="140" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="t3_3" value="芸術活動の広がり&#xa;寺山修司作品・朗読劇" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ED7D31;strokeColor=none;fontColor=#ffffff;shadow=1;" vertex="1" parent="tier3_lane">
-          <mxGeometry x="520" y="45" width="200" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Nodes for Tier 4 -->
-        <mxCell id="t4_1" value="未確認活動履歴&#xa;海外海軍基地ライブ" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9A9A9;strokeColor=none;fontColor=#ffffff;shadow=0;dashed=1;" vertex="1" parent="tier4_lane">
-          <mxGeometry x="60" y="45" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="t4_2" value="リスク予測&#xa;権利処理・情報更新滞留" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9A9A9;strokeColor=none;fontColor=#ffffff;shadow=0;dashed=1;" vertex="1" parent="tier4_lane">
-          <mxGeometry x="290" y="45" width="200" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="t4_3" value="将来実装計画&#xa;ロードマップ (R1-R4)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A9A9A9;strokeColor=none;fontColor=#ffffff;shadow=0;dashed=1;" vertex="1" parent="tier4_lane">
-          <mxGeometry x="520" y="45" width="200" height="60" as="geometry" />
+        <mxCell id="t2_3" value="ワーゲンバスでの&lt;br&gt;ツアー・生活スタイル" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="840" y="330" width="140" height="50" as="geometry" />
         </mxCell>
 
-        <!-- Relationships -->
-        <mxCell id="rel1" value="検証必要" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#666666;" edge="1" parent="1" source="t1_1" target="t2_1">
+        <!-- Tier 3 Branch (Context/Inference) -->
+        <mxCell id="tier3_node" value="Tier 3: 文脈・推論&lt;br&gt;(Contextual)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ED7D31;strokeColor=#C65911;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="480" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="t3_1" value="音楽的系譜の&lt;br&gt;二重構造解釈" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="180" y="560" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_2" value="「下町×シカゴ」&lt;br&gt;アイデンティティ分析" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="370" y="590" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t3_3" value="ジャンゴ/ウルフ等の&lt;br&gt;音楽的影響分析" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="560" y="560" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 4 Branch (Unverified/Plan) -->
+        <mxCell id="tier4_node" value="Tier 4: 未検証・計画&lt;br&gt;(Low/Future)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#A5A5A5;strokeColor=#7B7B7B;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <mxCell id="t4_1" value="「日本ブルース世代論」&lt;br&gt;における位置づけ" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-100" y="240" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t4_2" value="海外海軍基地ライブ説&lt;br&gt;(詳細日時不明)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-100" y="300" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="t4_3" value="将来のファンサイト&lt;br&gt;実装・技術計画" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-100" y="360" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <!-- Root to Tiers -->
+        <mxCell id="e1" edge="1" parent="1" source="root_node" target="tier1_node">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rel2" value="製品化" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#666666;" edge="1" parent="1" source="t1_3" target="t2_3">
+        <mxCell id="e2" edge="1" parent="1" source="root_node" target="tier2_node">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rel3" value="スタイル分析" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#666666;" edge="1" parent="1" source="t1_1" target="t3_1">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="140" y="240" />
-              <mxPoint x="20" y="240" />
-              <mxPoint x="20" y="420" />
-              <mxPoint x="140" y="420" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="e3" edge="1" parent="1" source="root_node" target="tier3_node">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rel4" value="管理対象" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeColor=#666666;" edge="1" parent="1" source="t2_2" target="t4_2">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="370" y="380" />
-              <mxPoint x="370" y="380" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="e4" edge="1" parent="1" source="root_node" target="tier4_node">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 1 Children -->
+        <mxCell id="e_t1_1" edge="1" parent="1" source="tier1_node" target="t1_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t1_2" edge="1" parent="1" source="tier1_node" target="t1_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t1_3" edge="1" parent="1" source="tier1_node" target="t1_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t1_4" edge="1" parent="1" source="tier1_node" target="t1_4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 2 Children -->
+        <mxCell id="e_t2_1" edge="1" parent="1" source="tier2_node" target="t2_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t2_2" edge="1" parent="1" source="tier2_node" target="t2_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t2_3" edge="1" parent="1" source="tier2_node" target="t2_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 3 Children -->
+        <mxCell id="e_t3_1" edge="1" parent="1" source="tier3_node" target="t3_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t3_2" edge="1" parent="1" source="tier3_node" target="t3_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t3_3" edge="1" parent="1" source="tier3_node" target="t3_3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Tier 4 Children -->
+        <mxCell id="e_t4_1" edge="1" parent="1" source="tier4_node" target="t4_1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t4_2" edge="1" parent="1" source="tier4_node" target="t4_2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_t4_3" edge="1" parent="1" source="tier4_node" target="t4_3">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
       </root>

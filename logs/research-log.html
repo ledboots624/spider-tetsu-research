@@ -81,9 +81,34 @@ input { flex: 1; max-width: 300px; }
 <div class="log-line" data-level="info"><span class="ts">[2026-03-21 21:40:56</span> <span class="level-info">INFO]</span> 所要時間: <span class="duration">20m13s</span></div>
 <div class="log-line" data-level="info"><span class="ts">[2026-03-21 21:40:56</span> <span class="level-info">INFO]</span> バリデーション: PARTIAL</div>
 <div class="log-line" data-level="error"><span class="ts">[2026-03-21 21:40:56</span> <span class="level-error">ERROR]</span> 一部ステップが失敗: 4/5</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> 調査開始: ブルースマン　スパイダーテツ</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> モード: full, エコノミー: False</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> 既存プラン読み込み: default-full</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="separator">━━━</span> <span class="step-marker">Step 1</span>/5: 情報収集 (<span class="model">gemini-3-pro-preview</span>) <span class="separator">━━━</span></div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="step-marker">Step 1</span>: 既存出力あり、スキップ</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="separator">━━━</span> <span class="step-marker">Step 2</span>/5: 深層分析 (<span class="model">claude-sonnet-4.6</span>) <span class="separator">━━━</span></div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="step-marker">Step 2</span>: 既存出力あり、スキップ</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="separator">━━━</span> <span class="step-marker">Step 3</span>/5: 技術戦略 (<span class="model">gpt-5.3-codex</span>) <span class="separator">━━━</span></div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="step-marker">Step 3</span>: 既存出力あり、スキップ</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="separator">━━━</span> <span class="step-marker">Step 4</span>/5: 再検証 (<span class="model">claude-sonnet-4.6</span>) <span class="separator">━━━</span></div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="step-marker">Step 4</span>: 既存出力あり、スキップ</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-info">INFO]</span> <span class="separator">━━━</span> <span class="step-marker">Step 5</span>/5: 統合レビュー (<span class="model">claude-opus-4.6</span>) <span class="separator">━━━</span></div>
+<div class="log-line" data-level="debug"><span class="ts">[2026-03-21 23:13:04</span> <span class="level-debug">DEBUG]</span> LLM call: model=<span class="model">claude-opus-4.6</span>, prompt_len=16192, timeout=<span class="duration">1200s</span></div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:17:20</span> <span class="level-info">INFO]</span> <span class="step-marker">Step 5</span>: 出力保存 (14130 chars)</div>
+<div class="log-line" data-level="debug"><span class="ts">[2026-03-21 23:17:20</span> <span class="level-debug">DEBUG]</span> LLM call: model=<span class="model">claude-sonnet-4.6</span>, prompt_len=15113, timeout=<span class="duration">600s</span></div>
+<div class="log-line" data-level="warn"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-warn">WARN]</span> 不正な出力を検出 (model=<span class="model">claude-sonnet-4.6</span>): メタテキストまたは空のMarkdown</div>
+<div class="log-line" data-level="warn"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-warn">WARN]</span> <span class="step-marker">Step 5</span>: エビデンス抽出失敗: 不正な出力 (model=<span class="model">claude-sonnet-4.6</span>): Markdown見出しなし</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-info">INFO]</span> <span class="step-marker">Step 5</span>: 完了 (<span class="duration">5m16s</span>)</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-info">INFO]</span> バリデーション結果: PARTIAL (claims=39, no_evidence=0, no_source=10)</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-info">INFO]</span> ソースレジストリ生成: 32 sources</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-info">INFO]</span> <span class="separator">━━━</span> 調査完了 <span class="separator">━━━</span></div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-info">INFO]</span> ワークスペース: /Users/shige/work/test-claude/remote-test/public/py-test</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-info">INFO]</span> ステップ: 5/5</div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-info">INFO]</span> 所要時間: <span class="duration">5m16s</span></div>
+<div class="log-line" data-level="info"><span class="ts">[2026-03-21 23:18:20</span> <span class="level-info">INFO]</span> バリデーション: PARTIAL</div>
 </div>
 <div class="footer">
-INFO: 26 | WARN: 0 | ERROR: 2 | Total: 38 lines
+INFO: 47 | WARN: 2 | ERROR: 2 | Total: 63 lines
 </div>
 <script>
 function filterLogs() {
