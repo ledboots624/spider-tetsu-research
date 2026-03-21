@@ -1,0 +1,16 @@
+{
+  "context_type": "research_scope",
+  "description": "ファンや関係者でスパイダーさんの素晴らしさを共有したい",
+  "data": {
+    "purpose": "ファンで情報共有",
+    "focus": []
+  },
+  "theme": "ocean",
+  "presentation": {
+    "enabled": true,
+    "type": "ファンで共有",
+    "audience": "スパイダーさんのファン",
+    "focus": "経歴や海外での経験、ライブ活動経歴など、ギターやブルースとの関わり",
+    "pages": 10
+  }
+}

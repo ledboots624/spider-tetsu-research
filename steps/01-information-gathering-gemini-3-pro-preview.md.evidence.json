@@ -1,0 +1,92 @@
+{
+  "step": 1,
+  "role": "information-gathering",
+  "model": "gemini-3-pro-preview",
+  "extracted_at": "2026-03-21T20:32:33.797845",
+  "claims": [
+    {
+      "claim": "Spider Tetsuは東京下町生まれのブルース・シンガー兼ギタリストであり、竹田和夫氏に師事し確かなキャリアを積んできた。",
+      "evidence": "母親の影響で幼少期から音楽に親しみ、15歳で音楽の道を志し、竹田和夫氏（CREATION）に師事し「竹田和夫＆エル・コヨーテス」にも参加。",
+      "source": {
+        "source_type": "official_document",
+        "source_title": "Spider Tetsu Official Website - Profile",
+        "source_locator": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "Spider Tetsuはシカゴで現地ミュージシャンと共演し、オーティス・ラッシュのバースデーライブにも出演した。",
+      "evidence": "シカゴのクラブやライブハウスで数多くのセッションやライブを行い、オーティス・ラッシュのバースデーライブに出演・共演。",
+      "source": {
+        "source_type": "official_document",
+        "source_title": "Spider Tetsu Official Website / Lit.link",
+        "source_locator": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "Spider Tetsuはシカゴ・ブルースを基調としつつ、独自のヴィンテージサウンドを追求している。",
+      "evidence": "ジャンゴ・ラインハルトやハウリン・ウルフなど多岐にわたる影響を受け、Teisco等の国産ビザールギターやK&T Pickupsのシグネチャーモデルを使用し、独自のトーンを構築。",
+      "source": {
+        "source_type": "industry_report",
+        "source_title": "K&T Pickups Players / Spider's Channel (YouTube)",
+        "source_locator": "https://www.kt-pickup.com/players/",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "Spider Tetsuは全国ツアーやミュージカル・朗読劇など多岐にわたる活動を行っている。",
+      "evidence": "「Spider Walk Blues Band」や「Spider Tetsu & Red Hot Wagons」を率いて全国ツアーを行い、ミュージカル『夢に向かって・ブルースな日々』や朗読劇『ここは静かな最前線』にも出演。",
+      "source": {
+        "source_type": "news_article",
+        "source_title": "PR TIMES (公演情報) / パン・プランニング公式",
+        "source_locator": "https://prtimes.jp/main/html/rd/p/000001910.000013972.html",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier2",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    },
+    {
+      "claim": "Spider Tetsuの主なアルバム作品は『I'm Spider』であり、全曲自身の作曲によるインストゥルメンタルのスウィング＆ブルースアルバムである。",
+      "evidence": "『I'm Spider』は全曲Spider Tetsu作曲によるインストゥルメンタルのスウィング＆ブルースアルバムで、ストリーミングサービス等でも配信。",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "TuneCore Japan / Spider Tetsu Official",
+        "source_locator": "https://linkco.re/HSNa6u8U?lang=en",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier1",
+        "primary_source": true,
+        "community_score": null
+      },
+      "confidence": "high"
+    },
+    {
+      "claim": "Spider Tetsuのライブは『本物のブルース』と評価され、アットホームな雰囲気や人柄もファンから高く支持されている。",
+      "evidence": "シカゴ仕込みの演奏と歌唱に対し「リアルなブルース」「本物」という評価、初心者でも入りやすい雰囲気や気さくな人柄が好評。",
+      "source": {
+        "source_type": "community_data",
+        "source_title": "個人ブログ (GIAPPA-MERO) / YouTubeコメント / SNS",
+        "source_locator": "https://ameblo.jp/misajazz/entry-12918932562.html",
+        "access_date": "2026-03-21",
+        "reliability_tier": "tier3",
+        "primary_source": false,
+        "community_score": null
+      },
+      "confidence": "medium"
+    }
+  ]
+}

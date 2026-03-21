@@ -1,0 +1,134 @@
+{
+  "generated_at": "2026-03-21T20:33:53.553058",
+  "generator": "AI Research Agent v3.0.0",
+  "total_sources": 6,
+  "tier_summary": {
+    "tier1": 4,
+    "tier2": 1,
+    "tier3": 1,
+    "tier4": 0
+  },
+  "primary_source_count": 4,
+  "sources": [
+    {
+      "source_type": "industry_report",
+      "title": "K&T Pickups Players / Spider's Channel (YouTube)",
+      "locator": "https://www.kt-pickup.com/players/",
+      "url": "https://www.kt-pickup.com/players/",
+      "access_date": "2026-03-21",
+      "reliability_tier": "tier1",
+      "primary_source": true,
+      "community_score": null,
+      "reference_count": 2,
+      "referenced_by": [
+        "1:information-gathering:gemini-3-pro-preview",
+        "2:integration-review:claude-sonnet-4.6"
+      ],
+      "claim_summaries": [
+        "Spider Tetsuはシカゴ・ブルースを基調としつつ、独自のヴィンテージサウンドを追求している。",
+        "シカゴ・ブルースを基調に、ジャンゴ・ラインハルトやハウリン・ウルフ等の影響を受け、Teisco等の国産ビザールギターやK&T Pickupsのシグネチャーモデル、VOX Pathfinder 15R等を愛用している。"
+      ],
+      "id": "SRC-001"
+    },
+    {
+      "source_type": "news_article",
+      "title": "PR TIMES (公演情報) / パン・プランニング公式",
+      "locator": "https://prtimes.jp/main/html/rd/p/000001910.000013972.html",
+      "url": "https://prtimes.jp/main/html/rd/p/000001910.000013972.html",
+      "access_date": "2026-03-21",
+      "reliability_tier": "tier2",
+      "primary_source": false,
+      "community_score": null,
+      "reference_count": 2,
+      "referenced_by": [
+        "1:information-gathering:gemini-3-pro-preview",
+        "2:integration-review:claude-sonnet-4.6"
+      ],
+      "claim_summaries": [
+        "Spider Tetsuは全国ツアーやミュージカル・朗読劇など多岐にわたる活動を行っている。",
+        "Spider Walk Blues BandやSpider Tetsu & Red Hot Wagons等で全国ツアーを行い、演劇『夢に向かって・ブルースな日々』『ここは静かな最前線』などにも出演している。"
+      ],
+      "id": "SRC-002"
+    },
+    {
+      "source_type": "official_document",
+      "title": "Spider Tetsu Official Website - Profile",
+      "locator": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+      "url": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+      "access_date": "2026-03-21",
+      "reliability_tier": "tier1",
+      "primary_source": true,
+      "community_score": null,
+      "reference_count": 2,
+      "referenced_by": [
+        "1:information-gathering:gemini-3-pro-preview",
+        "2:integration-review:claude-sonnet-4.6"
+      ],
+      "claim_summaries": [
+        "Spider Tetsuは東京下町生まれのブルース・シンガー兼ギタリストであり、竹田和夫氏に師事し確かなキャリアを積んできた。",
+        "スパイダーテツは東京下町生まれのブルース・ギタリスト／シンガーであり、15歳から音楽活動を本格化し、竹田和夫氏に師事、CREATIONやエル・コヨーテスで活動した。"
+      ],
+      "id": "SRC-003"
+    },
+    {
+      "source_type": "official_document",
+      "title": "Spider Tetsu Official Website / Lit.link",
+      "locator": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+      "url": "https://spider-tetsu.jimdosite.com/spider-tetsu/",
+      "access_date": "2026-03-21",
+      "reliability_tier": "tier1",
+      "primary_source": true,
+      "community_score": null,
+      "reference_count": 2,
+      "referenced_by": [
+        "1:information-gathering:gemini-3-pro-preview",
+        "2:integration-review:claude-sonnet-4.6"
+      ],
+      "claim_summaries": [
+        "Spider Tetsuはシカゴで現地ミュージシャンと共演し、オーティス・ラッシュのバースデーライブにも出演した。",
+        "シカゴで現地ミュージシャンと多数共演し、オーティス・ラッシュのバースデーライブにも出演した。"
+      ],
+      "id": "SRC-004"
+    },
+    {
+      "source_type": "community_data",
+      "title": "TuneCore Japan / Spider Tetsu Official",
+      "locator": "https://linkco.re/HSNa6u8U?lang=en",
+      "url": "https://linkco.re/HSNa6u8U?lang=en",
+      "access_date": "2026-03-21",
+      "reliability_tier": "tier1",
+      "primary_source": true,
+      "community_score": null,
+      "reference_count": 2,
+      "referenced_by": [
+        "1:information-gathering:gemini-3-pro-preview",
+        "2:integration-review:claude-sonnet-4.6"
+      ],
+      "claim_summaries": [
+        "Spider Tetsuの主なアルバム作品は『I'm Spider』であり、全曲自身の作曲によるインストゥルメンタルのスウィング＆ブルースアルバムである。",
+        "『I'm Spider』などのアルバムをリリースし、全曲オリジナルでストリーミング配信も行っている。"
+      ],
+      "id": "SRC-005"
+    },
+    {
+      "source_type": "community_data",
+      "title": "個人ブログ (GIAPPA-MERO) / YouTubeコメント / SNS",
+      "locator": "https://ameblo.jp/misajazz/entry-12918932562.html",
+      "url": "https://ameblo.jp/misajazz/entry-12918932562.html",
+      "access_date": "2026-03-21",
+      "reliability_tier": "tier3",
+      "primary_source": false,
+      "community_score": null,
+      "reference_count": 2,
+      "referenced_by": [
+        "1:information-gathering:gemini-3-pro-preview",
+        "2:integration-review:claude-sonnet-4.6"
+      ],
+      "claim_summaries": [
+        "Spider Tetsuのライブは『本物のブルース』と評価され、アットホームな雰囲気や人柄もファンから高く支持されている。",
+        "ファンや関係者からは『本物のブルース』『アットホームなライブ』『人柄の良さ』など高評価を受けている。"
+      ],
+      "id": "SRC-006"
+    }
+  ]
+}

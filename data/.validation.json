@@ -1,0 +1,23 @@
+{
+  "validated_at": "2026-03-21T20:33:53.552445",
+  "result": "PASS",
+  "total_claims": 12,
+  "claims_without_evidence": 0,
+  "evidence_without_source": 0,
+  "claims_without_confidence": 0,
+  "confidence_distribution": {
+    "high": 8,
+    "medium": 3,
+    "low": 1
+  },
+  "reliability_tier_distribution": {
+    "tier1": 8,
+    "tier2": 2,
+    "tier3": 2,
+    "tier4": 0
+  },
+  "primary_source": {
+    "true": 8,
+    "false": 4
+  }
+}

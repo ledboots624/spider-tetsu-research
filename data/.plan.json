@@ -1,0 +1,27 @@
+{
+  "topic": "ブルースマン　スパイダーテツ",
+  "description": "ファンや関係者でスパイダーさんの素晴らしさを共有したい",
+  "generated_by": "default-quick",
+  "generated_at": "2026-03-21T20:25:31.666686",
+  "mode": "quick",
+  "steps": [
+    {
+      "id": "research",
+      "step": 1,
+      "role": "information-gathering",
+      "model": "gemini-3-pro-preview",
+      "prompt_focus": "このテーマについて広範な情報収集を行ってください。公式ドキュメント、学術論文、業界レポート、技術ブログなど多様なソースから情報を集め、各情報にソースと信頼度を付記してください。",
+      "depends_on": []
+    },
+    {
+      "id": "review",
+      "step": 2,
+      "role": "integration-review",
+      "model": "claude-sonnet-4.6",
+      "prompt_focus": "全ステップの成果を統合し、最終レポートを作成してください。エグゼクティブサマリー、主要発見事項、信頼度分布、矛盾点、制限事項、推奨アクションを含めてください。",
+      "depends_on": [
+        "research"
+      ]
+    }
+  ]
+}

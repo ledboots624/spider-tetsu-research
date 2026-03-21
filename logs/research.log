@@ -1,0 +1,35 @@
+[2026-03-21 20:25:31 INFO] 調査開始: ブルースマン　スパイダーテツ
+[2026-03-21 20:25:31 INFO] モード: quick, エコノミー: True
+[2026-03-21 20:25:31 INFO] デフォルトプラン生成: default-quick (2 steps)
+[2026-03-21 20:25:31 INFO] ━━━ Step 1/2: 情報収集 (gemini-3-pro-preview) ━━━
+[2026-03-21 20:26:24 ERROR] Step 1: 失敗 — gh copilot returned empty response
+[2026-03-21 20:26:24 INFO] バリデーション結果: NO_DATA (claims=0, no_evidence=0, no_source=0)
+[2026-03-21 20:26:24 INFO] ソースレジストリ生成: 0 sources
+[2026-03-21 20:26:24 INFO] ━━━ 調査完了 ━━━
+[2026-03-21 20:26:24 INFO] ワークスペース: /Users/shige/work/test-claude/remote-test/public/py-test
+[2026-03-21 20:26:24 INFO] ステップ: 0/2
+[2026-03-21 20:26:24 INFO] 所要時間: 52s
+[2026-03-21 20:26:24 INFO] バリデーション: NO_DATA
+[2026-03-21 20:26:24 ERROR] 一部ステップが失敗: 0/2
+[2026-03-21 20:31:28 INFO] 調査開始: ブルースマン　スパイダーテツ
+[2026-03-21 20:31:28 INFO] モード: quick, エコノミー: True
+[2026-03-21 20:31:28 INFO] 既存プラン読み込み: default-quick
+[2026-03-21 20:31:28 INFO] ━━━ Step 1/2: 情報収集 (gemini-3-pro-preview) ━━━
+[2026-03-21 20:31:28 DEBUG] LLM call: model=gemini-3-pro-preview, prompt_len=1049
+[2026-03-21 20:32:33 INFO] Step 1: 出力保存 (3337 chars)
+[2026-03-21 20:32:33 DEBUG] LLM call: model=gpt-4.1, prompt_len=4328
+[2026-03-21 20:32:58 INFO] Step 1: エビデンス抽出完了 (6 claims)
+[2026-03-21 20:32:58 INFO] Step 1: 完了 (1m30s)
+[2026-03-21 20:32:58 INFO] ━━━ Step 2/2: 統合レビュー (claude-sonnet-4.6) ━━━
+[2026-03-21 20:32:58 DEBUG] LLM call: model=gpt-4.1, prompt_len=4594
+[2026-03-21 20:33:29 INFO] Step 2: 出力保存 (4713 chars)
+[2026-03-21 20:33:29 DEBUG] LLM call: model=gpt-4.1, prompt_len=5698
+[2026-03-21 20:33:53 INFO] Step 2: エビデンス抽出完了 (6 claims)
+[2026-03-21 20:33:53 INFO] Step 2: 完了 (55s)
+[2026-03-21 20:33:53 INFO] バリデーション結果: PASS (claims=12, no_evidence=0, no_source=0)
+[2026-03-21 20:33:53 INFO] ソースレジストリ生成: 6 sources
+[2026-03-21 20:33:53 INFO] ━━━ 調査完了 ━━━
+[2026-03-21 20:33:53 INFO] ワークスペース: /Users/shige/work/test-claude/remote-test/public/py-test
+[2026-03-21 20:33:53 INFO] ステップ: 2/2
+[2026-03-21 20:33:53 INFO] 所要時間: 2m25s
+[2026-03-21 20:33:53 INFO] バリデーション: PASS
