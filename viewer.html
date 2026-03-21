@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Viewer</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Helvetica Neue', 'Noto Sans JP', sans-serif;background:#f5f7fa;color:#2d3748;line-height:1.7}
+.header{background:linear-gradient(135deg,#0c2d48 0%,#145374 50%,#2e8bc0 100%);color:#e2e8f0;padding:24px 40px;display:flex;align-items:center;gap:20px}
+.back-btn{display:inline-flex;align-items:center;gap:6px;color:#fff;background:rgba(255,255,255,0.12);text-decoration:none;font-size:0.85em;font-weight:600;padding:6px 16px;border-radius:8px;transition:background 0.2s}
+.back-btn:hover{background:rgba(255,255,255,0.22)}
+.header h1{font-size:1.15em;flex:1;font-weight:400;color:#cbd5e0}
+.header .doc-badge{display:inline-block;background:linear-gradient(135deg,#2e8bc0,#0c2d48);color:#fff;font-size:0.75em;font-weight:700;padding:4px 12px;border-radius:12px;margin-right:10px}
+.container{max-width:900px;margin:0 auto;padding:30px 20px}
+.content{background:#ffffff;border-radius:12px;padding:40px 44px;box-shadow:0 2px 12px rgba(0,0,0,0.08);line-height:1.85;font-size:0.98em}
+.content h1{font-size:1.7em;color:#1a202c;margin:1.4em 0 0.5em;padding-bottom:10px;border-bottom:3px solid #2e8bc0;}.content h1:first-child{margin-top:0}
+.content h2{font-size:1.35em;color:#145374;margin:1.3em 0 0.4em;padding-bottom:6px;border-bottom:1px solid #e2e8f0;}
+.content h3{font-size:1.1em;color:#718096;margin:1.1em 0 0.3em}
+.content h4{font-size:1em;color:#a0aec0;margin:1em 0 0.2em}
+.content p{margin:0.7em 0}.content ul,.content ol{padding-left:26px;margin:0.7em 0}.content li{margin:0.35em 0}
+.content blockquote{border-left:4px solid #2e8bc0;padding:14px 22px;margin:1.2em 0;background:#ebf8ff;border-radius:0 10px 10px 0;color:#145374;font-size:0.95em}
+.content code{background:#edf2f7;padding:2px 7px;border-radius:5px;font-size:0.88em;font-family:'SF Mono','Fira Code','Consolas',monospace;color:#c53030}
+.content pre{background:linear-gradient(135deg,#1a202c 0%,#2d3748 100%);color:#e2e8f0;padding:18px 22px;border-radius:10px;overflow-x:auto;margin:1.2em 0;box-shadow:0 2px 8px rgba(0,0,0,0.15)}
+.content pre code{background:none;padding:0;color:inherit}
+.content table{width:100%;border-collapse:collapse;margin:1.2em 0;font-size:0.92em;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,0.06);background:#ffffff}
+.content .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.2em 0;border-radius:8px;background:#ffffff}
+.content .table-wrap table{margin:0}
+.content th{background:linear-gradient(135deg,#edf2f7,#e2e8f0);padding:11px 14px;text-align:left;font-weight:700;color:#2d3748;border:1px solid #e2e8f0}
+.content td{padding:10px 14px;border:1px solid #e2e8f0}
+.content tr:nth-child(even){background:#f7fafc}.content tr:hover{background:#ebf8ff}
+.content hr{border:none;border-top:2px solid #e2e8f0;margin:2em 0}
+.content strong{color:#1a202c}
+.content a{color:#2e8bc0;text-decoration:none;border-bottom:1px solid transparent;transition:border-color 0.2s}.content a:hover{border-bottom-color:#2e8bc0}
+.content img{max-width:100%;border-radius:10px;margin:1.2em 0;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.role-banner{background:#ebf8ff;border:1px solid #90cdf4;border-radius:10px;padding:18px 22px;margin-bottom:28px}
+.role-banner h3{color:#145374;font-size:1em;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.role-banner h3::before{content:'';display:inline-block;width:4px;height:18px;background:#2e8bc0;border-radius:2px}
+.role-banner p{color:#718096;font-size:0.9em;line-height:1.7;margin:0}
+.role-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.role-meta-item{display:inline-flex;align-items:center;gap:5px;background:#ffffff;border:1px solid #90cdf4;border-radius:6px;padding:4px 10px;font-size:0.8em;color:#718096}
+.role-meta-item .label{color:#cbd5e0}.role-meta-item .value{color:#2d3748;font-weight:600}
+.loading{text-align:center;padding:80px 20px;color:#cbd5e0;font-size:1.1em}
+.loading::before{content:'';display:block;width:36px;height:36px;border:3px solid #e2e8f0;border-top-color:#2e8bc0;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.error{text-align:center;padding:80px 20px;color:#e53e3e;font-size:1.05em}
+.footer{background:#1a202c;color:#cbd5e0;text-align:center;padding:24px;font-size:0.85em;margin-top:40px}
+.footer a{color:#bee3f8;text-decoration:none}.footer a:hover{text-decoration:underline}
+
+@media(max-width:768px){.content{padding:24px 20px;margin:0;border-radius:0}.header{padding:16px 20px;flex-wrap:wrap}.container{padding:15px 10px}}
+</style>
+</head>
+<body>
+<div class="header">
+<a href="./index.html" class="back-btn">&larr; トップへ</a>
+<h1><span class="doc-badge" id="doc-badge">STEP</span><span id="doc-title">読み込み中...</span></h1>
+</div>
+<div class="container"><div class="content" id="content"><div class="loading">読み込み中...</div></div></div>
+<div class="footer"><a href="" id="raw-link">ソースを表示</a> &nbsp;|&nbsp; <a href="./index.html">トップへ</a></div>
+<script>
+(function(){
+var params=new URLSearchParams(window.location.search);
+var file=params.get('file');
+if(!file){document.getElementById('content').innerHTML='<div class="error">ファイルが指定されていません</div>';return}
+document.getElementById('raw-link').href=file;
+var fname=decodeURIComponent(file.split('/').pop());
+document.getElementById('doc-title').textContent=fname;
+document.title=fname+' - Document Viewer';
+var badge=document.getElementById('doc-badge');
+var roleInfo={badge:'DOC',color:'',title:'',desc:''};
+if(fname.match(/information-gathering/)){var sn=fname.match(/^(\d+)-/);roleInfo={badge:'STEP '+(sn?parseInt(sn[1]):''),color:'',title:'情報収集ステップ',desc:'調査テーマに関する基礎情報を幅広く収集しています。各情報には出典と信頼性階層が付与されています。'}}
+else if(fname.match(/deep-analysis/)){var sn=fname.match(/^(\d+)-/);roleInfo={badge:'STEP '+(sn?parseInt(sn[1]):''),color:'',title:'深層分析ステップ',desc:'収集された情報を多角的に分析し、因果関係・背景・影響・構造を深掘りしています。'}}
+else if(fname.match(/technical-strategy/)){var sn=fname.match(/^(\d+)-/);roleInfo={badge:'STEP '+(sn?parseInt(sn[1]):''),color:'',title:'技術戦略ステップ',desc:'調査結果に基づいて実践的な戦略・方針を策定しています。'}}
+else if(fname.match(/critic-review/)){var sn=fname.match(/^(\d+)-/);roleInfo={badge:'STEP '+(sn?parseInt(sn[1]):''),color:'linear-gradient(135deg,#e67e22,#d35400)',title:'品質検証ステップ',desc:'前のステップまでの調査結果全体を第三者の視点で検証しています。根拠が不十分な主張、情報の偏り、論理の矛盾、見落としを点検しています。'}}
+else if(fname.match(/integration-review/)){var sn=fname.match(/^(\d+)-/);roleInfo={badge:'STEP '+(sn?parseInt(sn[1]):''),color:'linear-gradient(135deg,#27ae60,#1e8449)',title:'統合レビューステップ',desc:'全ステップの調査・分析・検証結果を統合し、最終的な結論を導出しています。'}}
+else if(fname.startsWith('qa-')){roleInfo={badge:'Q&A',color:'linear-gradient(135deg,#f39c12,#e67e22)',title:'追加の質問応答',desc:'初回調査の完了後に、特定の疑問点について追加で質問した結果です。'}}
+else if(fname.startsWith('drill-')){roleInfo={badge:'DRILL',color:'linear-gradient(135deg,#e74c3c,#c0392b)',title:'追加の深掘り調査',desc:'初回調査の完了後に、特定のテーマについて追加で深掘り調査した結果です。'}}
+else if(fname==='FINAL_REPORT.md'){roleInfo={badge:'REPORT',color:'linear-gradient(135deg,#27ae60,#1e8449)',title:'最終レポート',desc:'全ての調査・追加調査の結果を統合し、読みやすく再構成した最終レポートです。'}}
+badge.textContent=roleInfo.badge;
+if(roleInfo.color)badge.style.background=roleInfo.color;
+var base=window.location.origin+window.location.pathname.replace(/\/[^\/]*$/,'/');
+var url=base+file;
+var mdP=fetch(url).then(function(r){if(!r.ok)throw new Error(r.status+': '+file);return r.text()});
+var planP=fetch(base+'data/.plan.json').then(function(r){return r.ok?r.json():null}).catch(function(){return null});
+Promise.all([mdP,planP]).then(function(results){
+var md=results[0],plan=results[1];
+var stepMatch=fname.match(/^(\d+)-/);var stepNum=stepMatch?parseInt(stepMatch[1]):0;
+var metaHtml='';
+if(plan&&stepNum>0){var stepDef=plan.steps?plan.steps.find(function(s){return s.step===stepNum}):null;if(stepDef)metaHtml+='<span class="role-meta-item"><span class="label">AIモデル:</span><span class="value">'+stepDef.model+'</span></span>'}
+if(stepNum===0&&fname.match(/claude|gemini|gpt/)){var mm=fname.match(/(claude-[a-z0-9.-]+|gemini-[a-z0-9.-]+|gpt-[a-z0-9.-]+)/);if(mm)metaHtml+='<span class="role-meta-item"><span class="label">AIモデル:</span><span class="value">'+mm[1]+'</span></span>'}
+var metaBlock=metaHtml?'<div class="role-meta">'+metaHtml+'</div>':'';
+var bannerHtml='';
+if(roleInfo.title)bannerHtml='<div class="role-banner"><h3>'+roleInfo.title+'</h3><p>'+roleInfo.desc+'</p>'+metaBlock+'</div>';
+document.getElementById('content').innerHTML=bannerHtml+marked.parse(md);
+document.querySelectorAll('.content table').forEach(function(t){var w=document.createElement('div');w.className='table-wrap';t.parentNode.insertBefore(w,t);w.appendChild(t)});
+var h1=document.querySelector('.content h1');if(h1){document.getElementById('doc-title').textContent=h1.textContent;document.title=h1.textContent+' - Document Viewer'}
+}).catch(function(e){document.getElementById('content').innerHTML='<div class="error">読み込みに失敗しました<br><small>'+e.message+'</small><br><br><a href="'+url+'" style="color:#4299e1;">Markdownファイルを直接開く</a></div>'});
+})();
+</script>
+</body>
+</html>
