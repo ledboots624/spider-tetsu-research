@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ブルースマン　スパイダーテツ</title>
+<style>
+:root {
+  --hero-g1: #0c2d48;
+  --hero-g2: #145374;
+  --hero-g3: #2e8bc0;
+  --accent-g1: #2e8bc0;
+  --accent-g2: #0c2d48;
+  --primary: #2e8bc0;
+  --primary-dark: #145374;
+  --text: #2d3748;
+  --text-muted: #718096;
+  --text-on-dark: #e2e8f0;
+  --bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --border: #e2e8f0;
+  --border-radius: 12px;
+  --card-radius: 16px;
+  --font-body: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+  --font-heading: 'Helvetica Neue', Arial, 'Hiragino Sans', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; }
+.hero {
+  background: linear-gradient(135deg, var(--hero-g1), var(--hero-g2), var(--hero-g3));
+  color: var(--text-on-dark); padding: 48px 24px; text-align: center;
+}
+.hero h1 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 8px; }
+.hero p { opacity: 0.85; max-width: 600px; margin: 0 auto; }
+.container { max-width: 1000px; margin: 0 auto; padding: 24px; }
+.section { margin-bottom: 32px; }
+.section h2 { font-family: var(--font-heading); font-size: 1.4rem; margin-bottom: 16px; color: var(--primary-dark); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.card {
+  background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--card-radius);
+  padding: 20px; transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+.card .badge {
+  display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px;
+  background: linear-gradient(135deg, var(--accent-g1), var(--accent-g2)); color: #fff; margin-bottom: 8px;
+}
+.card h3 { font-size: 1rem; margin-bottom: 4px; }
+.card .meta { font-size: 0.85rem; color: var(--text-muted); }
+.card a { color: var(--primary); text-decoration: none; }
+.card a:hover { text-decoration: underline; }
+.nav-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.nav-card {
+  padding: 16px; border-radius: var(--border-radius); color: #fff; text-decoration: none;
+  text-align: center; font-weight: bold; transition: opacity 0.2s;
+}
+.nav-card:hover { opacity: 0.85; }
+.nav1 { background: linear-gradient(135deg, #2e8bc0, #0c2d48); }
+.nav2 { background: linear-gradient(135deg, #45b7d1, #2e8bc0); }
+.nav3 { background: linear-gradient(135deg, #4facfe, #00f2fe); }
+.nav4 { background: linear-gradient(135deg, #a0aec0, #718096); }
+.validation { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--card-radius); padding: 20px; }
+.validation .result { font-size: 1.2rem; font-weight: bold; }
+.validation .pass { color: #48bb78; }
+.validation .partial { color: #ecc94b; }
+.validation .nodata { color: #a0aec0; }
+table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+th, td { padding: 8px 12px; border: 1px solid var(--border); text-align: left; font-size: 0.9rem; }
+th { background: #edf2f7; }
+.footer {
+  background: #1a202c; color: var(--text-on-dark); padding: 24px; text-align: center;
+  font-size: 0.85rem; margin-top: 48px;
+}
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>ブルースマン　スパイダーテツ</h1>
+  <p>ファンや関係者でスパイダーさんの素晴らしさを共有したい</p>
+</div>
+
+<div class="container">
+
+<!-- Navigation -->
+<div class="section">
+<h2>ドキュメント</h2>
+<div class="nav-grid">
+
+
+<a href="logs/research-log.html" class="nav-card nav3">実行ログ</a>
+<a href="data/sources.json" class="nav-card nav4">ソースレジストリ</a>
+</div>
+</div>
+
+<!-- Diagram -->
+
+
+<!-- Pipeline Steps -->
+<div class="section">
+<h2>パイプライン</h2>
+<div class="card-grid">
+
+<div class="card">
+  <span class="badge">Step 1</span>
+  <h3>情報収集</h3>
+  <div class="meta">gemini-3-pro-preview (1m30s)</div>
+  <p style="margin-top:8px;font-size:0.9rem;">ブルースマン スパイダーテツ (Spider Tetsu) リサーチレポート</p>
+  <a href="steps/01-information-gathering-gemini-3-pro-preview.md">全文を見る</a>
+</div>
+
+<div class="card">
+  <span class="badge">Step 2</span>
+  <h3>統合レビュー</h3>
+  <div class="meta">claude-sonnet-4.6 (55s)</div>
+  <p style="margin-top:8px;font-size:0.9rem;">ブルースマン スパイダーテツ 統合レビュー</p>
+  <a href="steps/02-integration-review-claude-sonnet-4.6.md">全文を見る</a>
+</div>
+
+</div>
+</div>
+
+<!-- Additional Research -->
+
+
+<!-- Visuals -->
+
+
+<!-- Validation -->
+
+<div class="section">
+<h2>バリデーション</h2>
+<div class="validation">
+  <div class="result pass">
+    PASS
+  </div>
+  <table>
+  <tr><th>指標</th><th>値</th></tr>
+  <tr><td>総主張数</td><td>12</td></tr>
+  <tr><td>エビデンスなし</td><td>0</td></tr>
+  <tr><td>ソースなし</td><td>0</td></tr>
+  <tr><td>信頼度 High</td><td>8</td></tr>
+  <tr><td>信頼度 Medium</td><td>3</td></tr>
+  <tr><td>信頼度 Low</td><td>1</td></tr>
+  </table>
+</div>
+</div>
+
+
+</div>
+
+<div class="footer">
+  Generated by AI Research Agent v3.0.0 | 2026-03-21 20:43
+</div>
+</body>
+</html>
