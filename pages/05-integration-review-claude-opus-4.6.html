@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>統合レビューステップ - ブルースマン　スパイダーテツ</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<style>
+:root, [data-theme="light"], [data-theme="dark"] {
+  --pico-primary: #c8873e;
+  --pico-primary-hover: #a06830;
+  --pico-primary-focus: #c8873e33;
+  --pico-primary-inverse: #fff;
+}
+/* Hero (custom) */
+.hero {
+  background: linear-gradient(135deg, #1a1210, #2c1e18, #3e2a1e);
+  color: #f5e6d0;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.hero p { opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .meta { margin-top: 1rem; font-size: 0.85rem; color: #b0a090; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem; }
+/* Sub-page header */
+.sub-header {
+  background: linear-gradient(135deg, #1a1210, #2c1e18, #3e2a1e);
+  color: #f5e6d0;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.sub-header h1 { font-size: 1.2rem; margin: 0; flex: 1; }
+.sub-header a { color: #f5e6d0; opacity: 0.8; text-decoration: none; font-size: 0.9rem; }
+.sub-header a:hover { opacity: 1; }
+/* Nav grid */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.nav-card {
+  display: block;
+  border-radius: var(--pico-border-radius);
+  padding: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); color: #fff; }
+.nav-card small { display: block; font-weight: 400; font-size: 0.8em; margin-top: 0.3rem; opacity: 0.9; }
+/* Step cards */
+.step-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.step-badge {
+  background: var(--pico-primary);
+  color: var(--pico-primary-inverse);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--pico-border-radius);
+  white-space: nowrap;
+}
+.step-info h4 { margin: 0; }
+.step-info p { margin: 0.3rem 0 0; font-size: 0.9rem; }
+.step-meta { font-size: 0.8rem; opacity: 0.7; }
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+.gallery-item { overflow: hidden; }
+.gallery-item img { width: 100%; height: auto; cursor: pointer; transition: transform 0.2s; }
+.gallery-item img:hover { transform: scale(1.02); }
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 95%; max-height: 95%; object-fit: contain; }
+/* Chart containers */
+.chart-container { position: relative; max-width: 500px; margin: 0 auto; }
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { padding: 2rem 1rem; }
+  .hero h1 { font-size: 1.5rem; }
+  .nav-grid, .gallery-grid { grid-template-columns: 1fr; }
+  .sub-header { padding: 1rem; flex-wrap: wrap; }
+}
+/* Theme decoration */
+.hero { position: relative; overflow: hidden; padding-bottom: 70px; }
+.hero h1 { color: #e0a860; }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-size='18' fill='rgba(245,230,208,0.06)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='50' y='60' font-size='14' fill='rgba(245,230,208,0.05)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3Ctext x='30' y='75' font-size='10' fill='rgba(245,230,208,0.04)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='30' cy='72' rx='14' ry='10' fill='%23d4a056' transform='rotate(-15 30 72)'/%3E%3Cline x1='43' y1='68' x2='43' y2='20' stroke='%23d4a056' stroke-width='3'/%3E%3Cpath d='M43 20 Q60 15 58 30 Q56 40 43 35' fill='%23d4a056'/%3E%3Cellipse cx='70' cy='60' rx='12' ry='9' fill='%23e0a860' transform='rotate(-15 70 60)'/%3E%3Cline x1='81' y1='56' x2='81' y2='12' stroke='%23e0a860' stroke-width='3'/%3E%3Cpath d='M81 12 Q95 8 93 22 Q91 30 81 26' fill='%23e0a860'/%3E%3Cline x1='43' y1='20' x2='81' y2='12' stroke='%23d4a056' stroke-width='2.5'/%3E%3C/svg%3E") no-repeat center/contain;
+  pointer-events: none;
+}
+footer { border-top: 2px solid rgba(212,160,86,0.2); }
+
+/* Pygments */
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #F8F8F2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ED007E; background-color: #1E0010 } /* Error */
+.highlight .esc { color: #F8F8F2 } /* Escape */
+.highlight .g { color: #F8F8F2 } /* Generic */
+.highlight .k { color: #66D9EF } /* Keyword */
+.highlight .l { color: #AE81FF } /* Literal */
+.highlight .n { color: #F8F8F2 } /* Name */
+.highlight .o { color: #FF4689 } /* Operator */
+.highlight .x { color: #F8F8F2 } /* Other */
+.highlight .p { color: #F8F8F2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #FF4689 } /* Generic.Deleted */
+.highlight .ge { color: #F8F8F2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #F8F8F2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #F8F8F2 } /* Generic.Error */
+.highlight .gh { color: #F8F8F2 } /* Generic.Heading */
+.highlight .gi { color: #A6E22E } /* Generic.Inserted */
+.highlight .go { color: #66D9EF } /* Generic.Output */
+.highlight .gp { color: #FF4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #F8F8F2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #F8F8F2 } /* Generic.Traceback */
+.highlight .kc { color: #66D9EF } /* Keyword.Constant */
+.highlight .kd { color: #66D9EF } /* Keyword.Declaration */
+.highlight .kn { color: #FF4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66D9EF } /* Keyword.Pseudo */
+.highlight .kr { color: #66D9EF } /* Keyword.Reserved */
+.highlight .kt { color: #66D9EF } /* Keyword.Type */
+.highlight .ld { color: #E6DB74 } /* Literal.Date */
+.highlight .m { color: #AE81FF } /* Literal.Number */
+.highlight .s { color: #E6DB74 } /* Literal.String */
+.highlight .na { color: #A6E22E } /* Name.Attribute */
+.highlight .nb { color: #F8F8F2 } /* Name.Builtin */
+.highlight .nc { color: #A6E22E } /* Name.Class */
+.highlight .no { color: #66D9EF } /* Name.Constant */
+.highlight .nd { color: #A6E22E } /* Name.Decorator */
+.highlight .ni { color: #F8F8F2 } /* Name.Entity */
+.highlight .ne { color: #A6E22E } /* Name.Exception */
+.highlight .nf { color: #A6E22E } /* Name.Function */
+.highlight .nl { color: #F8F8F2 } /* Name.Label */
+.highlight .nn { color: #F8F8F2 } /* Name.Namespace */
+.highlight .nx { color: #A6E22E } /* Name.Other */
+.highlight .py { color: #F8F8F2 } /* Name.Property */
+.highlight .nt { color: #FF4689 } /* Name.Tag */
+.highlight .nv { color: #F8F8F2 } /* Name.Variable */
+.highlight .ow { color: #FF4689 } /* Operator.Word */
+.highlight .pm { color: #F8F8F2 } /* Punctuation.Marker */
+.highlight .w { color: #F8F8F2 } /* Text.Whitespace */
+.highlight .mb { color: #AE81FF } /* Literal.Number.Bin */
+.highlight .mf { color: #AE81FF } /* Literal.Number.Float */
+.highlight .mh { color: #AE81FF } /* Literal.Number.Hex */
+.highlight .mi { color: #AE81FF } /* Literal.Number.Integer */
+.highlight .mo { color: #AE81FF } /* Literal.Number.Oct */
+.highlight .sa { color: #E6DB74 } /* Literal.String.Affix */
+.highlight .sb { color: #E6DB74 } /* Literal.String.Backtick */
+.highlight .sc { color: #E6DB74 } /* Literal.String.Char */
+.highlight .dl { color: #E6DB74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #E6DB74 } /* Literal.String.Doc */
+.highlight .s2 { color: #E6DB74 } /* Literal.String.Double */
+.highlight .se { color: #AE81FF } /* Literal.String.Escape */
+.highlight .sh { color: #E6DB74 } /* Literal.String.Heredoc */
+.highlight .si { color: #E6DB74 } /* Literal.String.Interpol */
+.highlight .sx { color: #E6DB74 } /* Literal.String.Other */
+.highlight .sr { color: #E6DB74 } /* Literal.String.Regex */
+.highlight .s1 { color: #E6DB74 } /* Literal.String.Single */
+.highlight .ss { color: #E6DB74 } /* Literal.String.Symbol */
+.highlight .bp { color: #F8F8F2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #A6E22E } /* Name.Function.Magic */
+.highlight .vc { color: #F8F8F2 } /* Name.Variable.Class */
+.highlight .vg { color: #F8F8F2 } /* Name.Variable.Global */
+.highlight .vi { color: #F8F8F2 } /* Name.Variable.Instance */
+.highlight .vm { color: #F8F8F2 } /* Name.Variable.Magic */
+.highlight .il { color: #AE81FF } /* Literal.Number.Integer.Long */
+/* Content styling */
+.md-content h1 { border-bottom: 2px solid var(--pico-primary); padding-bottom: 0.3rem; }
+.md-content h2 { border-bottom: 1px solid var(--pico-muted-border-color); padding-bottom: 0.2rem; }
+.md-content blockquote { border-left: 4px solid var(--pico-primary); padding: 0.8rem 1.2rem; }
+.md-content img { max-width: 100%; border-radius: var(--pico-border-radius); }
+.md-content table { width: 100%; }
+.role-banner { background: var(--pico-card-background-color); border: 1px solid var(--pico-muted-border-color); border-radius: var(--pico-border-radius); padding: 1rem 1.5rem; margin-bottom: 1.5rem; }
+.role-banner h4 { margin: 0 0 0.3rem; }
+.role-banner p { margin: 0; font-size: 0.9rem; opacity: 0.8; }
+.role-meta { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+.role-meta kbd { font-size: 0.8rem; }
+
+</style>
+
+</head>
+<body>
+<div class="sub-header">
+  <a href="../index.html">&larr; トップへ</a>
+  <h1>統合レビューステップ</h1>
+</div>
+<main class="container"><div class="role-banner">
+  <h4>STEP 5 統合レビューステップ</h4>
+  <p>全ステップの調査・分析・検証結果を統合し、最終的な結論を導出しています。</p>
+  <div class="role-meta"><kbd>claude-opus-4.6</kbd></div>
+</div>
+<article class="md-content"><h1 id="spider-tetsu">統合レビューレポート：ブルースマン スパイダーテツ（Spider Tetsu）</h1>
+<h2 id="1">1. エグゼクティブサマリー</h2>
+<p>本レポートは、ブルース・ギタリスト「スパイダーテツ（千田哲彦）」に関する4段階のリサーチ（情報収集・深層分析・技術戦略・再検証）を統合し、ファン・関係者間での情報共有を目的とした最終成果物である。</p>
+<p><strong>調査の結論</strong>：スパイダーテツは、竹田和夫への師事と本場シカゴでの活動経験を持ち、Red Hot Wagonsを率いて東京を拠点に精力的にライブ活動を行うブルースマンである。近年は演劇・舞台への越境的活動でも注目を集めている。K&amp;Tピックアップからのシグネチャーモデル発売は、機材面での評価の高さを示す。ただし、本調査で得られた情報は<strong>本人・関係者発信のソースに80%以上依存</strong>しており、独立した外部メディアによる裏付けが皆無である点は重大な制限事項である。</p>
+<p><strong>信頼度の総括</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>分類</th>
+<th>信頼度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>基本プロフィール（出身・ギター開始・竹田和夫への師事）</td>
+<td><strong>high</strong></td>
+</tr>
+<tr>
+<td>現在の活動（Red Hot Wagons・ライブ活動）</td>
+<td><strong>high</strong></td>
+</tr>
+<tr>
+<td>シカゴ渡米・現地活動の事実</td>
+<td><strong>medium</strong></td>
+</tr>
+<tr>
+<td>オーティス・ラッシュとの共演エピソード</td>
+<td><strong>low〜medium</strong></td>
+</tr>
+<tr>
+<td>機材情報（K&amp;T Spider-H）</td>
+<td><strong>high</strong></td>
+</tr>
+<tr>
+<td>演劇・舞台活動</td>
+<td><strong>medium</strong></td>
+</tr>
+<tr>
+<td>日本ブルース史における位置づけ（世代論）</td>
+<td><strong>low</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2">2. 調査設問</h2>
+<p>本リサーチは以下の問いに対する回答を目的とした。</p>
+<ol>
+<li>スパイダーテツの経歴とルーツはどのようなものか</li>
+<li>海外（シカゴ）での経験はどのようなものであったか</li>
+<li>現在のライブ活動の実態はどうか</li>
+<li>ギター・ブルースとの関わりはどのように深化してきたか</li>
+<li>ファン・関係者間で共有すべき主要エピソードと事実は何か</li>
+</ol>
+<hr />
+<h2 id="3">3. 主要発見事項</h2>
+<h3 id="f1">発見事項 F1：基本プロフィールとルーツ</h3>
+<p><strong>主張</strong>：スパイダーテツ（本名：千田哲彦）は東京の下町出身。母親がジャズ・ブルースを演奏しており、15歳でギターを開始。CREATIONの竹田和夫に師事し、「竹田和夫＆エル・コヨーテス」のメンバーとして活動した。</p>
+<p><strong>根拠の強さ</strong>：●●●○（3/4）— 公式サイトのプロフィールに明記。ただし生年・師事開始年・エル・コヨーテス在籍期間は不明。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong></td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>official_document</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>Spider Tetsu Official Website - Profile</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>https://spider-tetsu.jimdosite.com/spider-tetsu/</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier1</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注記</strong>：生年、師事開始年、エル・コヨーテス在籍期間は全ステップを通じて確認されていない。プロフィールの基本情報として重要なギャップである。</p>
+<hr />
+<h3 id="f2">発見事項 F2：シカゴ渡米と現地活動</h3>
+<p><strong>主張</strong>：単身渡米し、ブルースの本場シカゴで現地クラブに出入りし、セッションに参加した。</p>
+<p><strong>根拠の強さ</strong>：●●○○（2/4）— 公式プロフィールに記載があるが、渡米年・帰国年・在シカゴ期間はいずれも不明。外部メディアでの裏付けなし。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>medium</strong></td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>official_document</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>Spider Tetsu Official Website - Profile</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>https://spider-tetsu.jimdosite.com/spider-tetsu/</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier1</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="f3">発見事項 F3：オーティス・ラッシュとの共演エピソード</h3>
+<p><strong>主張</strong>：シカゴ・ブルースの巨匠オーティス・ラッシュのバースデーライブで同じステージに立ち演奏を共にした。</p>
+<p><strong>根拠の強さ</strong>：●○○○（1/4）— 公式録音は存在せず、複数のプロフィール文で言及されるが、いずれも本人・関係者発信と推定される。米国側メディア・ブルース音楽データベースでの記録確認は未実施。「複数の独立した情報源」とされているが、実際には独立性が担保されていない。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>low〜medium</strong>（再検証により情報収集時の「中〜高」から下方修正）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>community_data</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>各種ライブ告知・プロフィール文（本人・関係者発信と推定）</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>https://spider-tetsu.jimdosite.com/spider-tetsu/</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<p><strong>再検証による指摘</strong>：「セッション参加」と「著名アーティストとのステージ共演」は性質が異なるが、両者が混同されてシカゴ体験の重みが過大に見える構造がある。プレゼン資料では「本人証言による」旨を明記すべき。</p>
+<hr />
+<h3 id="f4red-hot-wagons">発見事項 F4：Red Hot Wagons の活動</h3>
+<p><strong>主張</strong>：帰国後、Spider Walk Blues Bandを経て、現在は「Spider Tetsu &amp; Red Hot Wagons」（Gt/Vo: Spider Tetsu、Upright Bass: Gane（白金正之助）、Drums: 吉岡優三）として東京・横浜・千葉・埼玉を中心にライブ活動。ビンテージのワーゲンバス（Type-2）で全国ツアーも行う。</p>
+<p><strong>根拠の強さ</strong>：●●●○（3/4）— lit.link等のスケジュール情報で活動実態を確認可能。結成年は不明。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong></td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>official_document</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>Spider Tetsu lit.link（スケジュール情報）</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>https://lit.link/spidertetsu</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier1</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="f5">発見事項 F5：演劇・舞台への越境活動</h3>
+<p><strong>主張</strong>：ミュージカルや朗読劇（寺山修司作品など）への楽曲提供・ストーリーテラー出演を行っている。2026年には「Gane &amp; Spider」として竹中直人・カルメン・マキとの共演が予定。</p>
+<p><strong>根拠の強さ</strong>：●●○○（2/4）— ライブ告知・スケジュール情報で確認可能だが、どの寺山作品にどの役割で関わったかの詳細は不明。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>medium</strong></td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>community_data</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>Musicians Paradise JAM - Schedule</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>https://musicians-paradise-jam.com/</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="f6kt-pickup-spider-h">発見事項 F6：K&amp;T Pickup シグネチャーモデル「Spider-H」</h3>
+<p><strong>主張</strong>：日本のハイエンド・ピックアップブランド K&amp;T から手巻きハムバッカー「Spider-H」が発売。PAFサウンドをベースにした設計。使用ギターにはSignature Model、ビンテージ国産ギター（Teisco EP-8, MJ-2L）、1959年製 Gibson Les Paul Special などがある。</p>
+<p><strong>根拠の強さ</strong>：●●●●（4/4）— メーカー公式製品ページで確認可能。独立した第三者（メーカー）による裏付け。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong></td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>industry_report</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>K&amp;T MODERN VINTAGE GUITARS - SPIDER-H Product Page</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>https://www.kt-pickup.com/product/spider-h-set/</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier1</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注記</strong>：深層分析で「2012年エンドース→2017年発売、5年の開発期間」とあるが、2012年エンドース開始のソースが未確認。</p>
+<hr />
+<h3 id="f7">発見事項 F7：ディスコグラフィ</h3>
+<p><strong>主張</strong>：代表作はアルバム「I'm Spider」（2019年再発）。全曲オリジナルのインストゥルメンタル作品で、スウィング・ジャズとブルースを融合。</p>
+<p><strong>根拠の強さ</strong>：●●○○（2/4）— 公式サイトに記載あるが、初版発売年が不明。「2019年再発」の前の経緯が未確認。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>medium</strong></td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>official_document</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>Spider Tetsu Official Website - Discography</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>https://spider-tetsu.jimdosite.com/spider-tetsu/</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier1</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4">4. 信頼度分布</h2>
+<h3 id="_1">主張別信頼度マッピング</h3>
+<div class="highlight"><pre><span></span><code>■ high（確度高）
+  ├─ 基本プロフィール（出身・ギター開始・竹田和夫師事）
+  ├─ Red Hot Wagons の現在の活動実態
+  └─ K&amp;T Spider-H シグネチャーピックアップの存在と仕様
+
+■ medium（確度中）
+  ├─ シカゴ渡米・現地セッション参加
+  ├─ 演劇・舞台活動（寺山作品、竹中直人共演）
+  └─ ディスコグラフィ（「I&#39;m Spider」の存在自体は確認）
+
+■ low〜medium（確度低〜中）
+  └─ オーティス・ラッシュとの共演エピソード
+
+■ low（確度低）
+  ├─ 海外海軍基地でのライブ経験（出典不明・要削除）
+  ├─ 日本ブルース史における「第二〜第三世代の架け橋」論（独自分類）
+  ├─ K&amp;T エンドース開始年（2012年）
+  └─ ディスコグラフィの「薄さ」が哲学的選択であるという解釈
+</code></pre></div>
+
+<h3 id="_2">ソースカバレッジ</h3>
+<div class="highlight"><pre><span></span><code>本人・関係者運営サイト       ████████░░  80%
+機材メーカーサイト（K&amp;T）    ██░░░░░░░░  10%
+SNS・ファン記録              █░░░░░░░░░   5%
+外部独立メディア             ░░░░░░░░░░   0%  ← 深刻な欠落
+音楽専門誌・データベース     ░░░░░░░░░░   0%  ← 深刻な欠落
+学術・音楽史研究             ░░░░░░░░░░   0%
+</code></pre></div>
+
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（この分析自体の信頼度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>本レポート内で実施したソースカバレッジ分析</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5">5. 矛盾する主張</h2>
+<h3 id="c1">矛盾 C1：オーティス・ラッシュ共演の信頼度評価</h3>
+<table>
+<thead>
+<tr>
+<th>ステップ</th>
+<th>評価</th>
+<th>根拠</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>情報収集</td>
+<td>tier2（中程度の信頼性）</td>
+<td>複数のプロフィール文で言及</td>
+</tr>
+<tr>
+<td>深層分析</td>
+<td>中〜高</td>
+<td>複数の独立したプロフィール文に同様の記述</td>
+</tr>
+<tr>
+<td><strong>再検証</strong></td>
+<td><strong>低〜中に下方修正</strong></td>
+<td>「独立した」とされる複数のプロフィール文は、実際には本人・関係者発信の可能性が高く、独立した裏付けにはならない</td>
+</tr>
+</tbody>
+</table>
+<p><strong>統合判定</strong>：再検証の指摘は妥当。<strong>低〜中（low〜medium）</strong> を採用する。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（矛盾の存在に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>先行ステップ間の主張比較分析</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c2">矛盾 C2：ディスコグラフィの「薄さ」の解釈</h3>
+<table>
+<thead>
+<tr>
+<th>ステップ</th>
+<th>主張</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深層分析</td>
+<td>「録音嫌い＝ライブアートとしての正統性の証左」という<strong>肯定的解釈</strong></td>
+</tr>
+<tr>
+<td>再検証</td>
+<td>レーベル関係・資金制約・タイミング等、複数の理由がありうる。「哲学的選択」断定は<strong>根拠不足</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>統合判定</strong>：再検証の指摘は妥当。録音作品が少ない理由は不明であり、特定の解釈を採用しない。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（矛盾の存在に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>先行ステップ間の主張比較分析</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c3">矛盾 C3：「海外海軍基地でのライブ」の出典</h3>
+<table>
+<thead>
+<tr>
+<th>ステップ</th>
+<th>記述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>深層分析</td>
+<td>「Red Hot Wagonsが海外の海軍基地でもライブ経験を持つ」と記述。「先行レポートで軽く触れられている」とある</td>
+</tr>
+<tr>
+<td>情報収集</td>
+<td><strong>該当記述なし</strong></td>
+</tr>
+<tr>
+<td>再検証</td>
+<td>先行レポートに記載がないことを確認。<strong>出典不明</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>統合判定</strong>：エビデンスが確認できない。<strong>本レポートでは採用しない</strong>（削除扱い）。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（矛盾の存在に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>先行ステップ間の主張比較分析</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="c4">矛盾 C4：技術戦略のスコープ逸脱</h3>
+<table>
+<thead>
+<tr>
+<th>ステップ</th>
+<th>主張</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>技術戦略</td>
+<td>12週間のWebサービス構築ロードマップ（KB管理、ファン投稿、JP/EN二言語化等）</td>
+</tr>
+<tr>
+<td>再検証</td>
+<td>元リクエストは10ページのプレゼン資料。大規模Web構築はスコープ外</td>
+</tr>
+</tbody>
+</table>
+<p><strong>統合判定</strong>：再検証の指摘は妥当。技術戦略の提案は参考情報として保持するが、<strong>即時の優先事項は10ページのプレゼン資料作成</strong>であり、Web展開は将来の任意オプションとする。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（矛盾の存在に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>先行ステップ間のスコープ整合性分析</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6">6. 欠落データ</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>欠落情報</th>
+<th>重要度</th>
+<th>プレゼン資料への影響</th>
+<th>補完方法の提案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1</td>
+<td>生年・年齢</td>
+<td>🔴 高</td>
+<td>プロフィールページの基本情報欠落</td>
+<td>本人・関係者への直接確認</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>渡米年・帰国年・在シカゴ期間</td>
+<td>🔴 高</td>
+<td>経歴タイムラインが作れない</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>G3</td>
+<td>「竹田和夫＆エル・コヨーテス」在籍期間</td>
+<td>🟡 中</td>
+<td>師弟関係の具体性が弱い</td>
+<td>竹田和夫側の記録調査</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>「I'm Spider」初版発売年</td>
+<td>🟡 中</td>
+<td>ディスコグラフィの正確性</td>
+<td>CD現物・音楽配信サービス確認</td>
+</tr>
+<tr>
+<td>G5</td>
+<td>代表ライブの日時・会場・動員数</td>
+<td>🟡 中</td>
+<td>活動実績の具体性が弱い</td>
+<td>過去のライブ告知アーカイブ調査</td>
+</tr>
+<tr>
+<td>G6</td>
+<td>Red Hot Wagons 結成年</td>
+<td>🟡 中</td>
+<td>バンド紹介の正確性</td>
+<td>本人・関係者確認</td>
+</tr>
+<tr>
+<td>G7</td>
+<td>受賞歴・メディア掲載歴</td>
+<td>🟡 中</td>
+<td>外部評価の証拠皆無</td>
+<td>音楽誌アーカイブ・ライブナタリー等検索</td>
+</tr>
+<tr>
+<td>G8</td>
+<td>寺山修司作品との関係の詳細</td>
+<td>🟡 中</td>
+<td>演劇ページの具体性</td>
+<td>演劇関連メディア調査</td>
+</tr>
+<tr>
+<td>G9</td>
+<td>外部の音楽評論家・他ミュージシャンからの評価</td>
+<td>🟢 低</td>
+<td>第三者視点の不在</td>
+<td>音楽専門誌・インタビュー記事調査</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（ギャップの存在に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>全ステップ横断のギャップ分析</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="7">7. 制限事項</h2>
+<h3 id="l1">L1：ソースの独立性の欠如</h3>
+<p>本調査の情報源は約80%が本人・関係者が管理するWebメディア（公式サイト、lit.link、ブログ）に依存している。音楽専門誌、独立メディア、音楽データベース（Discogs、AllMusic等）による裏付けが一切含まれていない。これは「本人が語る自分の歴史」のみを収集している状態であり、バイオグラフィとしての客観性に限界がある。</p>
+<h3 id="l2">L2：肯定バイアスの構造的存在</h3>
+<p>調査目的が「ファンや関係者でスパイダーさんの素晴らしさを共有したい」であるため、全ステップにおいて肯定的解釈が優先される構造がある。活動規模の限界、認知度、録音作品の少なさといった「中立的事実」が意図的に回避・美化される傾向が認められた。</p>
+<h3 id="l3">L3：時系列情報の不完全性</h3>
+<p>生年、渡米年、帰国年、バンド結成年、師事期間など、キャリアの骨格となる年代情報がほぼ全て欠落しているため、正確な経歴タイムラインを構築できない。</p>
+<h3 id="l4">L4：深層分析における独自解釈の混入</h3>
+<p>深層分析ステップで提示された「日本ブルース第一〜第三世代の分類」「移動・旅・路上の通底テーマ」「大量生産への抵抗という一貫した美学」等は、外部の音楽史研究に基づかない独自解釈であり、事実と解釈の境界が不明瞭になっている。</p>
+<h3 id="l5">L5：技術戦略のスコープ逸脱</h3>
+<p>技術戦略ステップが12週間のWebサービス構築計画を提案しているが、これは元のリクエスト（10ページのファン向けプレゼン資料）の範囲を大幅に超過している。</p>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（制限事項の存在に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>全ステップ横断のメタ分析</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="8">8. 未解決事項</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>未解決事項</th>
+<th>解決の方向性</th>
+<th>優先度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>U1</td>
+<td>オーティス・ラッシュ共演の独立証拠</td>
+<td>米国ブルース関連メディア・データベースの調査、シカゴ地元紙アーカイブ検索</td>
+<td>高</td>
+</tr>
+<tr>
+<td>U2</td>
+<td>渡米年・帰国年・在シカゴ期間の特定</td>
+<td>本人・関係者への直接確認、またはインタビュー記事の発掘</td>
+<td>高</td>
+</tr>
+<tr>
+<td>U3</td>
+<td>外部メディアによる評価・言及の存在確認</td>
+<td>ライブナタリー、Blues &amp; Soul Records、Guitar Magazine等の検索</td>
+<td>高</td>
+</tr>
+<tr>
+<td>U4</td>
+<td>「I'm Spider」の初版年と制作背景</td>
+<td>CD現物確認、音楽配信サービス、Discogs等</td>
+<td>中</td>
+</tr>
+<tr>
+<td>U5</td>
+<td>寺山修司作品との具体的関わり</td>
+<td>演劇関連メディア・パンフレット等の調査</td>
+<td>中</td>
+</tr>
+<tr>
+<td>U6</td>
+<td>K&amp;T Pickup エンドース開始年の確認</td>
+<td>K&amp;T公式サイト、メーカーへの問い合わせ</td>
+<td>低</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（未解決事項の存在に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>全ステップ横断の残課題分析</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="9">9. 結論</h2>
+<h3 id="_3">確実に共有できる事実</h3>
+<p>スパイダーテツ（千田哲彦）は東京下町出身のブルース・ギタリスト兼ボーカリストであり、CREATIONの竹田和夫に師事した後、シカゴに渡って本場のブルースを体験した。現在は「Spider Tetsu &amp; Red Hot Wagons」を率い、東京・横浜を中心にライブ活動を展開している。K&amp;T Pickupからシグネチャーモデル「Spider-H」が発売されていることは、プロフェッショナルとしての評価を客観的に裏付ける数少ない独立エビデンスである。近年は演劇・舞台への越境的活動も注目される。</p>
+<h3 id="_4">注意を要する情報</h3>
+<p>オーティス・ラッシュとの共演エピソードは本人発信のみで独立した裏付けがなく、プレゼン資料で使用する際は「本人証言による」旨の注釈を付すべきである。日本ブルース史における位置づけ、ディスコグラフィの少なさの解釈、移動哲学や美学的一貫性の議論は分析者による独自解釈であり、事実として提示すべきではない。</p>
+<h3 id="_5">ファン向けプレゼン資料への推奨</h3>
+<p>10ページのプレゼン資料は以下の構成を推奨する。深層分析の10ページ提案をベースに、再検証の指摘を反映して修正したものである。</p>
+<table>
+<thead>
+<tr>
+<th>ページ</th>
+<th>テーマ</th>
+<th>注意事項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>表紙・イントロダクション</td>
+<td>「東京の下町のブルースマン」をキャッチコピーに</td>
+</tr>
+<tr>
+<td>2</td>
+<td>音楽のルーツ：母からの遺伝子</td>
+<td>ジャズ・ブルースを弾く母親の影響</td>
+</tr>
+<tr>
+<td>3</td>
+<td>師・竹田和夫との出会い</td>
+<td>CREATION、エル・コヨーテスの文脈</td>
+</tr>
+<tr>
+<td>4</td>
+<td>シカゴへの旅</td>
+<td>渡米年は「〇〇年代」のおおまかな表記。共演は「本人証言」と明記</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Red Hot Wagons の結成とサウンド</td>
+<td>メンバー紹介、ワーゲンバスの写真映え</td>
+</tr>
+<tr>
+<td>6</td>
+<td>音へのこだわり：Spider-H</td>
+<td>K&amp;T公式情報をベースに（信頼度 high）</td>
+</tr>
+<tr>
+<td>7</td>
+<td>ライブ活動の軌跡</td>
+<td>定期的な出演会場、ツアースタイル</td>
+</tr>
+<tr>
+<td>8</td>
+<td>演劇・舞台への越境</td>
+<td>寺山修司作品、竹中直人・カルメン・マキ共演</td>
+</tr>
+<tr>
+<td>9</td>
+<td>ディスコグラフィ：「I'm Spider」</td>
+<td>作品紹介。解釈の押しつけは避ける</td>
+</tr>
+<tr>
+<td>10</td>
+<td>語り継ぐべきブルースマン</td>
+<td>ファンコミュニティへの呼びかけ</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>medium</strong>（提案としての適切性に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>先行全ステップの統合に基づく構成提案</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="10">10. 推奨アクション</h2>
+<h3 id="_6">即時対応（プレゼン資料作成前）</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>アクション</th>
+<th>優先度</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1</td>
+<td>オーティス・ラッシュ共演の表現を「本人証言による」に修正</td>
+<td>🔴 最優先</td>
+<td>未検証エピソードの断定的使用はファンコミュニティの信頼を損なうリスク</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>「海外海軍基地ライブ」の記述を削除</td>
+<td>🔴 最優先</td>
+<td>出典が確認できない</td>
+</tr>
+<tr>
+<td>A3</td>
+<td>年代不明の箇所を「〇〇年代」等のおおまかな表記に統一</td>
+<td>🟡 重要</td>
+<td>不正確な年号の創出を防止</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>深層分析の独自解釈（世代論・美学論）を「事実」と分離</td>
+<td>🟡 重要</td>
+<td>事実と解釈の混同を防止</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_7">短期対応（プレゼン資料作成と並行）</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>アクション</th>
+<th>優先度</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A5</td>
+<td>外部音楽メディア（ライブナタリー等）でのスパイダーテツ言及を追加検索</td>
+<td>🟡 重要</td>
+<td>ソースの独立性向上</td>
+</tr>
+<tr>
+<td>A6</td>
+<td>本人・関係者への基本プロフィール情報（生年・渡米年等）の確認</td>
+<td>🟡 重要</td>
+<td>キャリア年表の構築</td>
+</tr>
+<tr>
+<td>A7</td>
+<td>「I'm Spider」のDiscogs・音楽配信サービスでの登録情報確認</td>
+<td>🟢 推奨</td>
+<td>ディスコグラフィの正確性向上</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_8">中長期対応（将来のオプション）</h3>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>アクション</th>
+<th>優先度</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A8</td>
+<td>ファン間の情報共有プラットフォームの検討（技術戦略レポート参照）</td>
+<td>🟢 任意</td>
+<td>コミュニティの持続的活動基盤</td>
+</tr>
+<tr>
+<td>A9</td>
+<td>JP/EN二言語化の検討</td>
+<td>🟢 任意</td>
+<td>シカゴ体験を持つアーティストとして海外ファンへの訴求可能性</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>medium</strong>（推奨事項としての適切性に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>全ステップの統合分析に基づく推奨</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier2</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11">11. ソースレジストリ</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>source_type</th>
+<th>source_title</th>
+<th>source_locator</th>
+<th>access_date</th>
+<th>reliability_tier</th>
+<th>primary_source</th>
+<th>使用箇所</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S01</td>
+<td>official_document</td>
+<td>Spider Tetsu Official Website - Profile</td>
+<td>https://spider-tetsu.jimdosite.com/spider-tetsu/</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+<td>F1, F2, F3, F7</td>
+</tr>
+<tr>
+<td>S02</td>
+<td>official_document</td>
+<td>Spider Tetsu lit.link</td>
+<td>https://lit.link/spidertetsu</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+<td>F1, F4</td>
+</tr>
+<tr>
+<td>S03</td>
+<td>industry_report</td>
+<td>K&amp;T MODERN VINTAGE GUITARS - SPIDER-H Product Page</td>
+<td>https://www.kt-pickup.com/product/spider-h-set/</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+<td>F6</td>
+</tr>
+<tr>
+<td>S04</td>
+<td>official_document</td>
+<td>Spider Tetsu Blog - Signature Model</td>
+<td>https://spidertetsu.blogspot.com/</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+<td>F6</td>
+</tr>
+<tr>
+<td>S05</td>
+<td>community_data</td>
+<td>Musicians Paradise JAM - Schedule</td>
+<td>https://musicians-paradise-jam.com/</td>
+<td>2026-03-21</td>
+<td>tier2</td>
+<td>false</td>
+<td>F5</td>
+</tr>
+<tr>
+<td>S06</td>
+<td>industry_report</td>
+<td>K&amp;T MODERN VINTAGE GUITARS - Player Page</td>
+<td>https://www.kt-pickup.com/player/spider-tetsu/</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+<td>F6</td>
+</tr>
+<tr>
+<td>S07</td>
+<td>community_data</td>
+<td>各種ライブ告知・プロフィール文</td>
+<td>複数（本人・関係者発信と推定）</td>
+<td>2026-03-21</td>
+<td>tier2</td>
+<td>false</td>
+<td>F3, F5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_9">ソースの信頼性に関する総合注記</h3>
+<ul>
+<li><strong>tier1ソースの実質的独立性</strong>：S01, S02, S04は本人または関係者が管理するWebメディアであり、形式的にはtier1（公式文書）だが、「独立した第三者による裏付け」としては機能しない。実質的な独立ソースはS03（K&amp;T製品ページ）およびS06（K&amp;Tプレイヤーページ）のみ。</li>
+<li><strong>外部独立メディアの完全欠如</strong>：音楽専門誌、ライブ情報サイト、音楽データベース等による言及が一本も含まれていない。これは本調査の最大の制限事項である。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>信頼度</td>
+<td><strong>high</strong>（ソースレジストリの正確性に関する確度）</td>
+</tr>
+<tr>
+<td>source_type</td>
+<td>unknown</td>
+</tr>
+<tr>
+<td>source_title</td>
+<td>全ステップで使用されたソースの統合レジストリ</td>
+</tr>
+<tr>
+<td>source_locator</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td>access_date</td>
+<td>2026-03-21</td>
+</tr>
+<tr>
+<td>reliability_tier</td>
+<td>tier1</td>
+</tr>
+<tr>
+<td>primary_source</td>
+<td>false</td>
+</tr>
+</tbody>
+</table></article></main><footer class="container">
+  <small>Generated by AI Research Agent v &mdash;
+  AI生成のため、重要な意思決定には人間による検証を推奨します</small>
+</footer>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+function openLightbox(el){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=el.src;lb.classList.add('active')}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active')}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+</script>
+</body>
+</html><!-- source: 05-integration-review-claude-opus-4.6.md -->

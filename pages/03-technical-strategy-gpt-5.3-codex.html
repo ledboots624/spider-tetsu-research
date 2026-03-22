@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>技術戦略ステップ - ブルースマン　スパイダーテツ</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+<style>
+:root, [data-theme="light"], [data-theme="dark"] {
+  --pico-primary: #c8873e;
+  --pico-primary-hover: #a06830;
+  --pico-primary-focus: #c8873e33;
+  --pico-primary-inverse: #fff;
+}
+/* Hero (custom) */
+.hero {
+  background: linear-gradient(135deg, #1a1210, #2c1e18, #3e2a1e);
+  color: #f5e6d0;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+.hero h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+.hero p { opacity: 0.9; max-width: 700px; margin: 0 auto; }
+.hero .meta { margin-top: 1rem; font-size: 0.85rem; color: #b0a090; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem 1.5rem; }
+/* Sub-page header */
+.sub-header {
+  background: linear-gradient(135deg, #1a1210, #2c1e18, #3e2a1e);
+  color: #f5e6d0;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.sub-header h1 { font-size: 1.2rem; margin: 0; flex: 1; }
+.sub-header a { color: #f5e6d0; opacity: 0.8; text-decoration: none; font-size: 0.9rem; }
+.sub-header a:hover { opacity: 1; }
+/* Nav grid */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.nav-card {
+  display: block;
+  border-radius: var(--pico-border-radius);
+  padding: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.nav-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); color: #fff; }
+.nav-card small { display: block; font-weight: 400; font-size: 0.8em; margin-top: 0.3rem; opacity: 0.9; }
+/* Step cards */
+.step-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.step-badge {
+  background: var(--pico-primary);
+  color: var(--pico-primary-inverse);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--pico-border-radius);
+  white-space: nowrap;
+}
+.step-info h4 { margin: 0; }
+.step-info p { margin: 0.3rem 0 0; font-size: 0.9rem; }
+.step-meta { font-size: 0.8rem; opacity: 0.7; }
+/* Gallery */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+.gallery-item { overflow: hidden; }
+.gallery-item img { width: 100%; height: auto; cursor: pointer; transition: transform 0.2s; }
+.gallery-item img:hover { transform: scale(1.02); }
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 95%; max-height: 95%; object-fit: contain; }
+/* Chart containers */
+.chart-container { position: relative; max-width: 500px; margin: 0 auto; }
+/* Responsive */
+@media (max-width: 768px) {
+  .hero { padding: 2rem 1rem; }
+  .hero h1 { font-size: 1.5rem; }
+  .nav-grid, .gallery-grid { grid-template-columns: 1fr; }
+  .sub-header { padding: 1rem; flex-wrap: wrap; }
+}
+/* Theme decoration */
+.hero { position: relative; overflow: hidden; padding-bottom: 70px; }
+.hero h1 { color: #e0a860; }
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='10' y='30' font-size='18' fill='rgba(245,230,208,0.06)' font-family='serif'%3E%E2%99%AA%3C/text%3E%3Ctext x='50' y='60' font-size='14' fill='rgba(245,230,208,0.05)' font-family='serif'%3E%E2%99%AC%3C/text%3E%3Ctext x='30' y='75' font-size='10' fill='rgba(245,230,208,0.04)' font-family='serif'%3E%E2%99%A9%3C/text%3E%3C/svg%3E");
+  pointer-events: none;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 25px;
+  width: 50px;
+  height: 50px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='30' cy='72' rx='14' ry='10' fill='%23d4a056' transform='rotate(-15 30 72)'/%3E%3Cline x1='43' y1='68' x2='43' y2='20' stroke='%23d4a056' stroke-width='3'/%3E%3Cpath d='M43 20 Q60 15 58 30 Q56 40 43 35' fill='%23d4a056'/%3E%3Cellipse cx='70' cy='60' rx='12' ry='9' fill='%23e0a860' transform='rotate(-15 70 60)'/%3E%3Cline x1='81' y1='56' x2='81' y2='12' stroke='%23e0a860' stroke-width='3'/%3E%3Cpath d='M81 12 Q95 8 93 22 Q91 30 81 26' fill='%23e0a860'/%3E%3Cline x1='43' y1='20' x2='81' y2='12' stroke='%23d4a056' stroke-width='2.5'/%3E%3C/svg%3E") no-repeat center/contain;
+  pointer-events: none;
+}
+footer { border-top: 2px solid rgba(212,160,86,0.2); }
+
+/* Pygments */
+pre { line-height: 125%; }
+td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.highlight .hll { background-color: #49483e }
+.highlight { background: #272822; color: #F8F8F2 }
+.highlight .c { color: #959077 } /* Comment */
+.highlight .err { color: #ED007E; background-color: #1E0010 } /* Error */
+.highlight .esc { color: #F8F8F2 } /* Escape */
+.highlight .g { color: #F8F8F2 } /* Generic */
+.highlight .k { color: #66D9EF } /* Keyword */
+.highlight .l { color: #AE81FF } /* Literal */
+.highlight .n { color: #F8F8F2 } /* Name */
+.highlight .o { color: #FF4689 } /* Operator */
+.highlight .x { color: #F8F8F2 } /* Other */
+.highlight .p { color: #F8F8F2 } /* Punctuation */
+.highlight .ch { color: #959077 } /* Comment.Hashbang */
+.highlight .cm { color: #959077 } /* Comment.Multiline */
+.highlight .cp { color: #959077 } /* Comment.Preproc */
+.highlight .cpf { color: #959077 } /* Comment.PreprocFile */
+.highlight .c1 { color: #959077 } /* Comment.Single */
+.highlight .cs { color: #959077 } /* Comment.Special */
+.highlight .gd { color: #FF4689 } /* Generic.Deleted */
+.highlight .ge { color: #F8F8F2; font-style: italic } /* Generic.Emph */
+.highlight .ges { color: #F8F8F2; font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.highlight .gr { color: #F8F8F2 } /* Generic.Error */
+.highlight .gh { color: #F8F8F2 } /* Generic.Heading */
+.highlight .gi { color: #A6E22E } /* Generic.Inserted */
+.highlight .go { color: #66D9EF } /* Generic.Output */
+.highlight .gp { color: #FF4689; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { color: #F8F8F2; font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #959077 } /* Generic.Subheading */
+.highlight .gt { color: #F8F8F2 } /* Generic.Traceback */
+.highlight .kc { color: #66D9EF } /* Keyword.Constant */
+.highlight .kd { color: #66D9EF } /* Keyword.Declaration */
+.highlight .kn { color: #FF4689 } /* Keyword.Namespace */
+.highlight .kp { color: #66D9EF } /* Keyword.Pseudo */
+.highlight .kr { color: #66D9EF } /* Keyword.Reserved */
+.highlight .kt { color: #66D9EF } /* Keyword.Type */
+.highlight .ld { color: #E6DB74 } /* Literal.Date */
+.highlight .m { color: #AE81FF } /* Literal.Number */
+.highlight .s { color: #E6DB74 } /* Literal.String */
+.highlight .na { color: #A6E22E } /* Name.Attribute */
+.highlight .nb { color: #F8F8F2 } /* Name.Builtin */
+.highlight .nc { color: #A6E22E } /* Name.Class */
+.highlight .no { color: #66D9EF } /* Name.Constant */
+.highlight .nd { color: #A6E22E } /* Name.Decorator */
+.highlight .ni { color: #F8F8F2 } /* Name.Entity */
+.highlight .ne { color: #A6E22E } /* Name.Exception */
+.highlight .nf { color: #A6E22E } /* Name.Function */
+.highlight .nl { color: #F8F8F2 } /* Name.Label */
+.highlight .nn { color: #F8F8F2 } /* Name.Namespace */
+.highlight .nx { color: #A6E22E } /* Name.Other */
+.highlight .py { color: #F8F8F2 } /* Name.Property */
+.highlight .nt { color: #FF4689 } /* Name.Tag */
+.highlight .nv { color: #F8F8F2 } /* Name.Variable */
+.highlight .ow { color: #FF4689 } /* Operator.Word */
+.highlight .pm { color: #F8F8F2 } /* Punctuation.Marker */
+.highlight .w { color: #F8F8F2 } /* Text.Whitespace */
+.highlight .mb { color: #AE81FF } /* Literal.Number.Bin */
+.highlight .mf { color: #AE81FF } /* Literal.Number.Float */
+.highlight .mh { color: #AE81FF } /* Literal.Number.Hex */
+.highlight .mi { color: #AE81FF } /* Literal.Number.Integer */
+.highlight .mo { color: #AE81FF } /* Literal.Number.Oct */
+.highlight .sa { color: #E6DB74 } /* Literal.String.Affix */
+.highlight .sb { color: #E6DB74 } /* Literal.String.Backtick */
+.highlight .sc { color: #E6DB74 } /* Literal.String.Char */
+.highlight .dl { color: #E6DB74 } /* Literal.String.Delimiter */
+.highlight .sd { color: #E6DB74 } /* Literal.String.Doc */
+.highlight .s2 { color: #E6DB74 } /* Literal.String.Double */
+.highlight .se { color: #AE81FF } /* Literal.String.Escape */
+.highlight .sh { color: #E6DB74 } /* Literal.String.Heredoc */
+.highlight .si { color: #E6DB74 } /* Literal.String.Interpol */
+.highlight .sx { color: #E6DB74 } /* Literal.String.Other */
+.highlight .sr { color: #E6DB74 } /* Literal.String.Regex */
+.highlight .s1 { color: #E6DB74 } /* Literal.String.Single */
+.highlight .ss { color: #E6DB74 } /* Literal.String.Symbol */
+.highlight .bp { color: #F8F8F2 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #A6E22E } /* Name.Function.Magic */
+.highlight .vc { color: #F8F8F2 } /* Name.Variable.Class */
+.highlight .vg { color: #F8F8F2 } /* Name.Variable.Global */
+.highlight .vi { color: #F8F8F2 } /* Name.Variable.Instance */
+.highlight .vm { color: #F8F8F2 } /* Name.Variable.Magic */
+.highlight .il { color: #AE81FF } /* Literal.Number.Integer.Long */
+/* Content styling */
+.md-content h1 { border-bottom: 2px solid var(--pico-primary); padding-bottom: 0.3rem; }
+.md-content h2 { border-bottom: 1px solid var(--pico-muted-border-color); padding-bottom: 0.2rem; }
+.md-content blockquote { border-left: 4px solid var(--pico-primary); padding: 0.8rem 1.2rem; }
+.md-content img { max-width: 100%; border-radius: var(--pico-border-radius); }
+.md-content table { width: 100%; }
+.role-banner { background: var(--pico-card-background-color); border: 1px solid var(--pico-muted-border-color); border-radius: var(--pico-border-radius); padding: 1rem 1.5rem; margin-bottom: 1.5rem; }
+.role-banner h4 { margin: 0 0 0.3rem; }
+.role-banner p { margin: 0; font-size: 0.9rem; opacity: 0.8; }
+.role-meta { display: flex; gap: 0.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+.role-meta kbd { font-size: 0.8rem; }
+
+</style>
+
+</head>
+<body>
+<div class="sub-header">
+  <a href="../index.html">&larr; トップへ</a>
+  <h1>技術戦略ステップ</h1>
+</div>
+<main class="container"><div class="role-banner">
+  <h4>STEP 3 技術戦略ステップ</h4>
+  <p>調査結果に基づいて実践的な戦略・方針を策定しています。</p>
+  <div class="role-meta"><kbd>gpt-5.3-codex</kbd></div>
+</div>
+<article class="md-content"><h1 id="_1">スパイダーテツ情報共有プロジェクト：技術戦略・アクションプラン</h1>
+<h2 id="_2">優先順位付き施策（実現可能性・リスク評価）</h2>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>施策（主張）</th>
+<th>優先度</th>
+<th>実現可能性</th>
+<th>主なリスク</th>
+<th>技術アクション</th>
+<th>信頼度</th>
+<th>source_type</th>
+<th>source_title</th>
+<th>source_locator</th>
+<th>access_date</th>
+<th>reliability_tier</th>
+<th>primary_source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S1</td>
+<td>経歴・海外経験・ライブ・機材を一元管理する「証拠付きナレッジDB」が必要</td>
+<td>P0</td>
+<td>高</td>
+<td>初期データ整理工数</td>
+<td><code>content</code>と<code>source</code>を分離し、各記事に<code>source_id/reliability_tier/confidence</code>を必須化</td>
+<td>high</td>
+<td>unknown</td>
+<td>User-provided research_scope JSON（focus指定）</td>
+<td>N/A</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>false</td>
+</tr>
+<tr>
+<td>S2</td>
+<td>一次情報とコミュニティ情報の混在に対応する真偽ラベル運用が必要</td>
+<td>P0</td>
+<td>高</td>
+<td>表記基準の不統一</td>
+<td>公開面に「公式確認済み/コミュニティ証言/未検証」バッジを実装。争点情報は注釈付き表示</td>
+<td>high</td>
+<td>community_data</td>
+<td>深層分析レポート（Otis Rush共演のエビデンス評価）</td>
+<td>https://spider-tetsu.jimdosite.com/spider-tetsu/</td>
+<td>2026-03-21</td>
+<td>tier2</td>
+<td>false</td>
+</tr>
+<tr>
+<td>S3</td>
+<td>10ページ共有資料を最初のMVP成果物にするべき</td>
+<td>P0</td>
+<td>高</td>
+<td>テンプレ固定時の柔軟性不足</td>
+<td>10ページの固定テンプレを作成し、DBから自動差し込みで更新</td>
+<td>high</td>
+<td>community_data</td>
+<td>深層分析レポート 7章（10ページ構成提案）</td>
+<td>https://spider-tetsu.jimdosite.com/ / https://lit.link/spidertetsu</td>
+<td>2026-03-21</td>
+<td>tier2</td>
+<td>false</td>
+</tr>
+<tr>
+<td>S4</td>
+<td>ライブ中心の情報体験（予定＋履歴）を中核機能に置くべき</td>
+<td>P0</td>
+<td>高</td>
+<td>更新停止</td>
+<td>週次更新のライブカレンダーと過去公演アーカイブを同時運用</td>
+<td>high</td>
+<td>official_document</td>
+<td>Spider Tetsu lit.link（スケジュール情報）</td>
+<td>https://lit.link/spidertetsu</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+</tr>
+<tr>
+<td>S5</td>
+<td>機材・音作り特集はファン深耕に有効</td>
+<td>P1</td>
+<td>高</td>
+<td>情報の古さ</td>
+<td>Spider-H、使用ギター、アンプの「検証済み機材ページ」を作る</td>
+<td>high</td>
+<td>industry_report</td>
+<td>K&amp;T MODERN VINTAGE GUITARS - SPIDER-H Product Page</td>
+<td>https://www.kt-pickup.com/product/spider-h-set/</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+</tr>
+<tr>
+<td>S6</td>
+<td>ファン投稿は「投稿→検証→公開」の審査フローが必須</td>
+<td>P1</td>
+<td>中</td>
+<td>誤情報・荒れ</td>
+<td>投稿フォーム、レビューキュー、差し戻し理由テンプレを実装</td>
+<td>medium</td>
+<td>unknown</td>
+<td>User-provided research_scope JSON（purpose: ファンで情報共有）</td>
+<td>N/A</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>false</td>
+</tr>
+<tr>
+<td>S7</td>
+<td>海外経験を踏まえ、JP/EN二言語化は第2段階で有効</td>
+<td>P2</td>
+<td>中</td>
+<td>翻訳品質</td>
+<td>まず固定ページのみ二言語化し、ライブ速報はJP優先で段階拡張</td>
+<td>medium</td>
+<td>official_document</td>
+<td>Spider Tetsu Official Website - Profile（シカゴ活動）</td>
+<td>https://spider-tetsu.jimdosite.com/spider-tetsu/</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="12">実装ロードマップ（12週間）</h2>
+<table>
+<thead>
+<tr>
+<th>フェーズ</th>
+<th>期間</th>
+<th>実装内容</th>
+<th>完了条件</th>
+<th>信頼度</th>
+<th>source_type</th>
+<th>source_title</th>
+<th>source_locator</th>
+<th>access_date</th>
+<th>reliability_tier</th>
+<th>primary_source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td>1-2週</td>
+<td>データモデル設計、既存情報の初期投入、真偽ラベル運用開始</td>
+<td>主要トピック（経歴/海外/ライブ/機材）を最低1周公開可能</td>
+<td>medium</td>
+<td>unknown</td>
+<td>技術戦略上の実装見積（MVP計画）</td>
+<td>N/A</td>
+<td>2026-03-21</td>
+<td>tier4</td>
+<td>false</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>3-5週</td>
+<td>Web MVP公開、10ページ資料テンプレ公開、ライブ予定連携</td>
+<td>ファン共有会で実際に使える状態</td>
+<td>medium</td>
+<td>unknown</td>
+<td>技術戦略上の実装見積（MVP計画）</td>
+<td>N/A</td>
+<td>2026-03-21</td>
+<td>tier4</td>
+<td>false</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>6-8週</td>
+<td>ファン投稿導線、編集審査、改訂履歴管理</td>
+<td>投稿から公開までの運用が回る</td>
+<td>low</td>
+<td>unknown</td>
+<td>技術戦略上の実装見積（運用拡張）</td>
+<td>N/A</td>
+<td>2026-03-21</td>
+<td>tier4</td>
+<td>false</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>9-12週</td>
+<td>JP/EN対応、分析計測、SNS配信用素材自動化</td>
+<td>継続運用のKPI計測が可能</td>
+<td>low</td>
+<td>unknown</td>
+<td>技術戦略上の実装見積（拡張計画）</td>
+<td>N/A</td>
+<td>2026-03-21</td>
+<td>tier4</td>
+<td>false</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">主要リスクと対策</h2>
+<table>
+<thead>
+<tr>
+<th>リスク</th>
+<th>影響</th>
+<th>優先度</th>
+<th>対策</th>
+<th>信頼度</th>
+<th>source_type</th>
+<th>source_title</th>
+<th>source_locator</th>
+<th>access_date</th>
+<th>reliability_tier</th>
+<th>primary_source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>事実の過剰断定（例：録音が残らない共演エピソード）</td>
+<td>信頼失墜</td>
+<td>高</td>
+<td>断定表現を避け、出典と確度を常時表示</td>
+<td>high</td>
+<td>community_data</td>
+<td>深層分析レポート（エビデンス評価）</td>
+<td>https://spider-tetsu.jimdosite.com/spider-tetsu/</td>
+<td>2026-03-21</td>
+<td>tier2</td>
+<td>false</td>
+</tr>
+<tr>
+<td>写真・動画・音源の権利不備</td>
+<td>公開停止・クレーム</td>
+<td>高</td>
+<td>権利台帳（権利者/許諾範囲/期限）を必須化</td>
+<td>medium</td>
+<td>unknown</td>
+<td>権利管理の一般実務知見</td>
+<td>N/A</td>
+<td>2026-03-21</td>
+<td>tier4</td>
+<td>false</td>
+</tr>
+<tr>
+<td>ライブ情報の更新滞留</td>
+<td>利用離脱</td>
+<td>高</td>
+<td>更新担当固定、週次SLA、未更新アラート</td>
+<td>medium</td>
+<td>official_document</td>
+<td>Spider Tetsu lit.link（継続的スケジュール更新の必要性）</td>
+<td>https://lit.link/spidertetsu</td>
+<td>2026-03-21</td>
+<td>tier1</td>
+<td>true</td>
+</tr>
+<tr>
+<td>投稿コミュニティの品質低下</td>
+<td>炎上・離脱</td>
+<td>中</td>
+<td>投稿ガイドライン、モデレーション基準、通報導線</td>
+<td>medium</td>
+<td>unknown</td>
+<td>ファンコミュニティ運用上の一般知見</td>
+<td>N/A</td>
+<td>2026-03-21</td>
+<td>tier4</td>
+<td>false</td>
+</tr>
+</tbody>
+</table></article></main><footer class="container">
+  <small>Generated by AI Research Agent v &mdash;
+  AI生成のため、重要な意思決定には人間による検証を推奨します</small>
+</footer>
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="">
+</div>
+<script>
+function openLightbox(el){var lb=document.getElementById('lightbox');document.getElementById('lightbox-img').src=el.src;lb.classList.add('active')}
+function closeLightbox(){document.getElementById('lightbox').classList.remove('active')}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLightbox()});
+</script>
+</body>
+</html><!-- source: 03-technical-strategy-gpt-5.3-codex.md -->
