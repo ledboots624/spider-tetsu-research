@@ -89,7 +89,7 @@
           </mxGeometry>
         </mxCell>
 
-        <mxCell id="14" value="K&amp;Tピックアップ\n「Spider-H」発売" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
+        <mxCell id="14" value="K&amp;Tピックアップ&#xa;「Spider-H」発売" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F5F5F5;strokeColor=#666666;fontColor=#333333;" parent="1" vertex="1">
           <mxGeometry x="200" y="780" width="180" height="50" as="geometry" />
         </mxCell>
         <mxCell id="edge14" style="endArrow=none;html=1;strokeColor=#4472C4;strokeWidth=2;" parent="1" source="14" edge="1">
